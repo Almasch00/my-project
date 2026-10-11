@@ -1,0 +1,6 @@
+node_modules/
+# rendered output and per-project vendored runtime copies
+videos/*/renders/
+videos/*/*.mp4
+videos/*/vendor/
+.hyperframes/

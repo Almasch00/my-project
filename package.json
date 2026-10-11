@@ -1,0 +1,16 @@
+{
+  "name": "my-project",
+  "private": true,
+  "description": "Video editing workspace powered by HyperFrames (HTML -> MP4).",
+  "scripts": {
+    "new-video": "bash scripts/new-video.sh",
+    "doctor": "hyperframes doctor"
+  },
+  "devDependencies": {
+    "gsap": "3.14.2",
+    "hyperframes": "0.8.147"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

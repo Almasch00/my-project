@@ -19,8 +19,9 @@
 #s01-hook-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
 #s01-hook-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
 
-#s01-hook-root .glow{position:absolute;left:460px;top:120px;width:1000px;height:700px;border-radius:50%;
-  background:radial-gradient(closest-side,rgba(255,255,255,.75),rgba(255,255,255,0));}
+#s01-hook-root .bgw{position:absolute;inset:0;overflow:hidden;}
+#s01-hook-root .bgw video{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;}
+#s01-hook-root .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(221,231,241,.92) 0%,rgba(221,231,241,.55) 38%,rgba(221,231,241,.25) 70%,rgba(221,231,241,.45) 100%);}
 #s01-hook-root .stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;padding-bottom:170px;}
 #s01-hook-root .head{font-weight:700;font-size:64px;letter-spacing:-.5px;display:flex;gap:18px;}
 #s01-hook-root .head .w{display:inline-block;}
@@ -37,7 +38,8 @@
 </style>
 <div id="s01-hook-root" data-composition-id="s01-hook" data-width="1920" data-height="1080">
 
-<div class="glow"></div>
+<div class="bgw"><video id="s01-bg" class="clip" src="assets/footage/warehouse-floor.mp4" muted playsinline data-start="0" data-duration="3.05" data-track-index="0"></video></div>
+<div class="veil"></div>
 <div class="stack">
   <div class="head"><span class="w">When</span><span class="w">did</span><span class="w">someone</span><span class="w">last</span><span class="w">touch</span><span class="w">your</span><span class="w hl">reorder</span><span class="w hl">rules?</span></div>
   <div class="card">
@@ -59,6 +61,7 @@ var P='#s01-hook-root', S=0.0;
 function T(g){return Math.max(0, +(g - S).toFixed(3));}
 var tl=gsap.timeline({paused:true});
 
+tl.fromTo(P+' .bgw',{scale:1.12},{scale:1.0,duration:3.05,ease:'none'},0);
 tl.fromTo(P+' .card',{y:70,opacity:0,filter:'blur(14px)'},{y:0,opacity:1,filter:'blur(0px)',duration:.7,ease:'power3.out'},T(0.05));
 tl.fromTo(P+' .head .w:nth-child(1)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.06));
 tl.fromTo(P+' .head .w:nth-child(2)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.30));

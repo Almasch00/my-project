@@ -127,8 +127,6 @@ for at in (3.15, 4.68, 6.0):
 place(P, 7.53, -18); place(P, 8.04, -18)  # min / max tiles
 place(S, 9.62, -20)                   # date carousel roll
 place(I, 9.99, -19)                   # sticky note slap
-for i in range(0, 15, 3):
-    place(Psmall, 12.36 + i * 0.06, -22)  # boxes dropping
 place(S, 14.75, -21)                  # boxes fall out
 place(P, 15.36, -16)                  # big X
 place(P, 16.65, -18)                  # cash
@@ -245,6 +243,5 @@ def write(path, mono, width=0.0):
         w.writeframes(data.tobytes())
 
 
-write(f"{OUT}/music.wav", music, width=0.4)
 write(f"{OUT}/sfx.wav", sfx)
 print("ok", np.abs(sfx).max(), np.abs(music).max())

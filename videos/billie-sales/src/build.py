@@ -46,15 +46,9 @@ def icon(code, size, extra=""):
             f'background:url(assets/icons/{code}.svg) center/contain no-repeat;{extra}"></i>')
 
 
-ODOO_PATH = open(os.path.join(ROOT, "assets/odoo-glyph.svg")).read()
-ODOO_D = ODOO_PATH.split('d="')[1].split('"')[0]
-
-
-def odoo(height, color="#714B67"):
-    # simple-icons glyph is a 24x24 box with the wordmark vertically centred (~5.9 units tall)
-    w = height * 24 / 5.9
-    return (f'<svg viewBox="0 9.05 24 5.9" style="height:{height}px;width:{w:.0f}px;display:block">'
-            f'<path d="{ODOO_D}" fill="{color}"/></svg>')
+def odoo(height):
+    # original Odoo logo (assets/odoo.png, 747x238 with transparency)
+    return f'<img class="odoo" src="assets/odoo.png" alt="Odoo" style="height:{height}px;width:{height * 747 / 238:.0f}px;display:block">'
 
 
 SCENES = []
@@ -74,8 +68,9 @@ def scene(sid, start, end, css, html, js):
 words1 = [("When", .06), ("did", .30), ("someone", .48), ("last", .90), ("touch", 1.24), ("your", 1.50),
           ("reorder", 1.68), ("rules?", 2.19)]
 scene("s01-hook", 0.0, 3.05, """
-#__RID__ .glow{position:absolute;left:460px;top:120px;width:1000px;height:700px;border-radius:50%;
-  background:radial-gradient(closest-side,rgba(255,255,255,.75),rgba(255,255,255,0));}
+#__RID__ .bgw{position:absolute;inset:0;overflow:hidden;}
+#__RID__ .bgw video{position:absolute;left:0;top:0;width:1920px;height:1080px;object-fit:cover;}
+#__RID__ .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(221,231,241,.92) 0%,rgba(221,231,241,.55) 38%,rgba(221,231,241,.25) 70%,rgba(221,231,241,.45) 100%);}
 #__RID__ .stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;padding-bottom:170px;}
 #__RID__ .head{font-weight:700;font-size:64px;letter-spacing:-.5px;display:flex;gap:18px;}
 #__RID__ .head .w{display:inline-block;}
@@ -90,7 +85,8 @@ scene("s01-hook", 0.0, 3.05, """
 #__RID__ .val{font-size:58px;font-weight:700;}
 #__RID__ .stale{display:inline-block;color:#E5322D;}
 """, f"""
-<div class="glow"></div>
+<div class="bgw"><video id="s01-bg" class="clip" src="assets/footage/warehouse-floor.mp4" muted playsinline data-start="0" data-duration="3.05" data-track-index="0"></video></div>
+<div class="veil"></div>
 <div class="stack">
   <div class="head">{''.join(f'<span class="w{" hl" if w in ("reorder", "rules?") else ""}">{w}</span>' for w, _ in words1)}</div>
   <div class="card">
@@ -105,6 +101,7 @@ scene("s01-hook", 0.0, 3.05, """
 </div>
 <div class="cursor">{CURSOR}</div><div class="ripple"></div>
 """, """
+tl.fromTo(P+' .bgw',{scale:1.12},{scale:1.0,duration:3.05,ease:'none'},0);
 tl.fromTo(P+' .card',{y:70,opacity:0,filter:'blur(14px)'},{y:0,opacity:1,filter:'blur(0px)',duration:.7,ease:'power3.out'},T(0.05));
 """ + "".join(f"tl.fromTo(P+' .head .w:nth-child({i+1})',{{y:34,opacity:0}},{{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'}},T({t:.2f}));\n" for i, (w, t) in enumerate(words1)) + """
 tl.fromTo(P+' .cursor',{x:1500,y:900},{x:1400,y:700,duration:1.0,ease:'power2.inOut'},T(1.0));
@@ -210,11 +207,13 @@ scene("s04-shelves", 11.60, 16.55, """
 #__RID__ .foot{position:absolute;left:40px;right:40px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:30px;color:#6B7487;}
 #__RID__ .foot b{font-weight:800;font-size:44px;color:#141B3C;}
 #__RID__ .why{display:flex;align-items:center;gap:10px;}
+#__RID__ .media{position:absolute;left:40px;top:110px;width:680px;height:470px;border-radius:24px;overflow:hidden;}
+#__RID__ .media video{position:absolute;left:0;top:0;width:680px;height:470px;object-fit:cover;}
 #__RID__ .xbig{position:absolute;left:250px;top:110px;width:180px;height:180px;}
 """, f"""
 <div class="cards">
  <div class="pc pl"><div class="tag r">{icon('1f4e6', 40)}Overstocked</div>
-  <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div>{shelf_boxes('L', 5, 3)}</div>
+  <div class="media"><video id="s04-aisle" class="clip" src="assets/footage/stocked-aisle.mp4" muted playsinline data-start="0" data-duration="4.95" data-track-index="0"></video></div>
   <div class="foot"><span class="why w0">{icon('1f4c9', 40)}Doesn't sell</span><span>On hand <b class="cntL">0</b></span></div></div>
  <div class="pc pr"><div class="tag a">{icon('274c', 36)}Out of stock</div>
   <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div>{shelf_boxes('R', 2, 3)}<div class="xbig">{icon('274c', 180)}</div></div>
@@ -222,8 +221,8 @@ scene("s04-shelves", 11.60, 16.55, """
 </div>
 """, """
 tl.fromTo(P+' .pl',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(11.75));
-tl.set(P+' .pl .bx',{y:-520,opacity:0},0);
-""" + "".join(f"tl.to(P+' .L{i}',{{y:0,opacity:1,duration:.38,ease:'bounce.out'}},T({12.36 + i * 0.06:.2f}));\n" for i in range(15)) + """
+tl.fromTo(P+' .media video',{scale:1.15},{scale:1.0,duration:4.9,ease:'none'},0);
+
 var cL={v:0};tl.to(cL,{v:860,duration:1.0,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .cntL').textContent=Math.round(cL.v);}},T(12.4));
 tl.fromTo(P+' .w0',{opacity:0,x:-20},{opacity:1,x:0,duration:.3},T(13.89));
 tl.fromTo(P+' .pr',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(14.2));

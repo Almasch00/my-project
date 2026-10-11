@@ -736,7 +736,6 @@ def main():
 {chr(10).join(hosts)}
     <div id="captions" class="clip" data-composition-id="captions" data-track-kind="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{TOTAL}" data-track-index="2" data-width="{W}" data-height="{H}"></div>
     <audio id="vo" src="assets/vo.mp3" data-start="0" data-duration="66.43" data-track-index="3" data-volume="1"></audio>
-    <audio id="music" src="assets/music.wav" data-start="0" data-duration="{TOTAL}" data-track-index="4" data-volume="1"></audio>
     <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="{TOTAL}" data-track-index="5" data-volume="1"></audio>
     </div>
     <script>

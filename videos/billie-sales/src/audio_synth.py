@@ -118,44 +118,38 @@ def tick():
 
 R = ring()
 K = tick()
-for at in (3.0, 7.35, 11.55, 16.3, 27.5, 37.85, 43.15, 55.3, 61.6):
-    place(Wsoft, at, -21)            # scene transitions
 place(P, 0.12, -20)                   # rule card
 place(P, 2.2, -18)                    # "2 years ago" click
 for at in (3.15, 4.68, 6.0):
     place(P, at, -17)                 # timeline icons
 place(P, 7.53, -18); place(P, 8.04, -18)  # min / max tiles
-place(S, 9.62, -20)                   # date carousel roll
+place(S, 9.62, -26)                   # date carousel roll
 place(I, 9.99, -19)                   # sticky note slap
-place(S, 14.75, -21)                  # boxes fall out
+for i in range(0, 15, 3):
+    place(Psmall, 12.36 + i * 0.06, -22)  # boxes dropping
+place(S, 14.75, -27)                  # boxes fall out
 place(P, 15.36, -16)                  # big X
 place(P, 16.65, -18)                  # cash
 place(C, 17.58, -22)                  # freeze shimmer
-place(W, 19.25, -19)                  # call card in
 place(R, 20.3, -24)                   # phone ring
-place(S, 22.2, -18)                   # collapse
-place(W, 22.74, -14); place(W, 23.12, -15)  # ribbons
+place(S, 22.2, -24)                   # collapse
 place(P, 24.0, -18)                   # label
 place(P, 24.6, -15); place(C, 24.7, -20)    # Billie reveal
 place(Psmall, 26.6, -20)              # odoo chip
-place(W, 27.53, -16)                  # blue wipe
 for at in (29.25, 30.27, 31.32, 32.4, 34.5, 35.37, 36.99):
     place(K, at - 0.05, -18)          # pill ticks
-place(S, 32.45, -20); place(S, 33.35, -20)  # card cycle
+place(S, 32.45, -26); place(S, 33.35, -26)  # card cycle
 for at in (41.28, 41.94, 42.72):
     place(K, at, -16)                 # carousel clicks
-place(W, 43.5, -17)                   # card grows
 for at in (46.3, 47.89, 49.63):
     place(P, at, -17)                 # checks
-place(S, 50.25, -18)                  # collapse
+place(S, 50.25, -24)                  # collapse
 place(P, 50.73, -16)                  # odoo
-place(W, 52.6, -18)                   # robot in
 place(P, 53.61, -17); place(P, 54.3, -17)   # exceptions
 place(K, 56.05, -14)                  # toggle
 for at in (57.75, 58.89, 60.48):
     place(P, at, -17)                 # steps
 place(I, 61.95, -14)                  # big letters
-place(W, 64.25, -16)                  # end reveal
 place(C, 64.6, -18)
 place(Psmall, 66.4, -21)
 

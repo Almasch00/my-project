@@ -207,13 +207,11 @@ scene("s04-shelves", 11.60, 16.55, """
 #__RID__ .foot{position:absolute;left:40px;right:40px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:30px;color:#6B7487;}
 #__RID__ .foot b{font-weight:800;font-size:44px;color:#141B3C;}
 #__RID__ .why{display:flex;align-items:center;gap:10px;}
-#__RID__ .media{position:absolute;left:40px;top:110px;width:680px;height:470px;border-radius:24px;overflow:hidden;}
-#__RID__ .media video{position:absolute;left:0;top:0;width:680px;height:470px;object-fit:cover;}
 #__RID__ .xbig{position:absolute;left:250px;top:110px;width:180px;height:180px;}
 """, f"""
 <div class="cards">
  <div class="pc pl"><div class="tag r">{icon('1f4e6', 40)}Overstocked</div>
-  <div class="media"><video id="s04-aisle" class="clip" src="assets/footage/stocked-aisle.mp4" muted playsinline data-start="0" data-duration="4.95" data-track-index="0"></video></div>
+  <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div>{shelf_boxes('L', 5, 3)}</div>
   <div class="foot"><span class="why w0">{icon('1f4c9', 40)}Doesn't sell</span><span>On hand <b class="cntL">0</b></span></div></div>
  <div class="pc pr"><div class="tag a">{icon('274c', 36)}Out of stock</div>
   <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div>{shelf_boxes('R', 2, 3)}<div class="xbig">{icon('274c', 180)}</div></div>
@@ -221,8 +219,8 @@ scene("s04-shelves", 11.60, 16.55, """
 </div>
 """, """
 tl.fromTo(P+' .pl',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(11.75));
-tl.fromTo(P+' .media video',{scale:1.15},{scale:1.0,duration:4.9,ease:'none'},0);
-
+tl.set(P+' .pl .bx',{y:-520,opacity:0},0);
+""" + "".join(f"tl.to(P+' .L{i}',{{y:0,opacity:1,duration:.38,ease:'bounce.out'}},T({12.36 + i * 0.06:.2f}));\n" for i in range(15)) + """
 var cL={v:0};tl.to(cL,{v:860,duration:1.0,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .cntL').textContent=Math.round(cL.v);}},T(12.4));
 tl.fromTo(P+' .w0',{opacity:0,x:-20},{opacity:1,x:0,duration:.3},T(13.89));
 tl.fromTo(P+' .pr',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(14.2));

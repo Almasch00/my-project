@@ -25,7 +25,7 @@ About 1 minute, driven by the supplied voiceover.
 - assets/bayforward-white.svg — Bay Forward logo (white, for dark backgrounds).
 - assets/odoo.png — original Odoo logo (supplied by user); replaces the earlier glyph everywhere.
 - assets/music-src-micrah-the-event.mp3 — "Micrah - The Event" (supplied by user); music bed, kept low (src/prepare_music.sh).
-- assets/footage/warehouse-floor.mp4, stocked-aisle.mp4 — Intel sample-videos (github.com/intel-iot-devkit/sample-videos), CC BY 4.0; credit required.
+- assets/footage/warehouse-floor.mp4 (hook only) — Intel sample-videos (github.com/intel-iot-devkit/sample-videos), CC BY 4.0; credit required.
 - Reference (not shipped): Lisa_v.1.1_1.mp4 — style source.
 
 ## Customizations
@@ -33,7 +33,7 @@ About 1 minute, driven by the supplied voiceover.
 - Subtitles in the same style as the Lisa video (white bold sans on dark-grey rounded per-line boxes, bottom centre).
 - Text transitions/animations styled like Lisa: rolling blurred word carousel, card collapse-to-line, curved ribbon swoosh ("Meet / Billie"), toggle, blue split-screen pill list, "runs on Odoo" reveal, gradient big-letter logo close.
 - Subtle SFX on transitions; music bed = user's "Micrah - The Event", low and carved under the VO (synthesized bed removed).
-- Footage from free sources: Unsplash/Pexels/Pixabay are blocked in this environment, so CC BY 4.0 clips from Intel sample-videos are used (hook background, overstock card).
+- Footage from free sources: Unsplash/Pexels/Pixabay are blocked in this environment, so CC BY 4.0 clips from Intel sample-videos are used (hook background only; overstock scene keeps its motion graphics per user).
 - End CTA: "Book a 20-minute stock check" with info@bayforward.com in small text.
 
 ## Notes

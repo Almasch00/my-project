@@ -1,0 +1,132 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s07-recalc-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s07-recalc-root *{box-sizing:border-box;}
+#s07-recalc-root .abs{position:absolute;}
+#s07-recalc-root .fill{position:absolute;inset:0;}
+#s07-recalc-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s07-recalc-root img.ic{display:block;}
+#s07-recalc-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s07-recalc-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s07-recalc-root{background:#fff;}
+#s07-recalc-root .blue{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#2563EB;transform-origin:0 50%;}
+#s07-recalc-root .lw{position:absolute;left:0;top:0;width:1000px;height:820px;overflow:hidden;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 78%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 78%,transparent 100%);}
+#s07-recalc-root .list{position:absolute;left:90px;top:0;}
+#s07-recalc-root .pill{position:relative;height:108px;margin-bottom:24px;display:flex;align-items:center;gap:22px;padding:0 46px 0 30px;border-radius:54px;
+  background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.3);color:#fff;font-family:'Roboto';font-weight:500;font-size:52px;width:max-content;}
+#s07-recalc-root .stack{position:absolute;left:1180px;top:200px;width:580px;height:440px;}
+#s07-recalc-root .pcd{position:absolute;left:0;top:0;width:580px;height:440px;background:#fff;border-radius:34px;box-shadow:0 30px 60px rgba(20,27,60,.18);padding:36px 40px;}
+#s07-recalc-root .bd{position:absolute;left:22px;top:22px;width:16px;height:16px;border-radius:50%;background:#4F46E5;}
+#s07-recalc-root .ph{display:flex;align-items:center;gap:18px;margin-bottom:22px;}
+#s07-recalc-root .pn{font-weight:700;font-size:36px;}
+#s07-recalc-root .ps{font-family:'Roboto';font-weight:500;font-size:22px;color:#6F7785;}
+#s07-recalc-root .mr{display:flex;align-items:center;height:78px;border-top:2px solid #EEF1F5;font-weight:500;font-size:30px;color:#4B5568;}
+#s07-recalc-root .mr b{margin-left:auto;font-weight:800;font-size:44px;color:#141B3C;}
+#s07-recalc-root .mr em{font-style:normal;width:46px;text-align:right;font-weight:800;font-size:34px;color:#16A34A;}
+#s07-recalc-root .plus{position:absolute;right:24px;bottom:22px;width:52px;height:52px;border-radius:50%;background:#4F46E5;color:#fff;font-style:normal;font-weight:600;font-size:38px;line-height:50px;text-align:center;}
+#s07-recalc-root .chips{position:absolute;left:1000px;width:920px;top:700px;display:flex;justify-content:center;gap:18px;}
+#s07-recalc-root .chip{display:flex;align-items:center;gap:12px;background:#F1F5FB;border:2px solid #DCE5F2;border-radius:40px;padding:10px 24px;font-weight:600;font-size:28px;}
+</style>
+<div id="s07-recalc-root" data-composition-id="s07-recalc" data-width="1920" data-height="1080">
+
+<div class="blue"></div>
+<div class="lw"><div class="list"><div class="pill p0"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f4cd.svg) center/contain no-repeat;"></i><span>Reorder Point</span></div><div class="pill p1"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f4ca.svg) center/contain no-repeat;"></i><span>Max Stock</span></div><div class="pill p2"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f6e1.svg) center/contain no-repeat;"></i><span>Safety Stock</span></div><div class="pill p3"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i><span>Every Product</span></div><div class="pill p4"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/23f1.svg) center/contain no-repeat;"></i><span>Real Lead Times</span></div><div class="pill p5"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f501.svg) center/contain no-repeat;"></i><span>Order Frequency</span></div><div class="pill p6"><i class="ic" style="display:block;flex:none;width:58px;height:58px;background:url(assets/icons/1f9fe.svg) center/contain no-repeat;"></i><span>Order Costs</span></div></div></div>
+<div class="stack"><div class="pcd pc3"><i class="bd"></i><div class="ph"><i class="ic" style="display:block;flex:none;width:54px;height:54px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i><div><div class="pn">Desk Lamp Arc</div><div class="ps">SKU 41876</div></div></div><div class="mr"><span>Reorder point</span><b class="v0">26</b><em class="d0">↓</em></div><div class="mr"><span>Max stock</span><b class="v1">82</b><em class="d1">↓</em></div><div class="mr"><span>Safety stock</span><b class="v2">9</b><em class="d2">↓</em></div><i class="plus">+</i></div><div class="pcd pc2"><i class="bd"></i><div class="ph"><i class="ic" style="display:block;flex:none;width:54px;height:54px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i><div><div class="pn">LED Panel 60W</div><div class="ps">SKU 33102</div></div></div><div class="mr"><span>Reorder point</span><b class="v0">84</b><em class="d0">↑</em></div><div class="mr"><span>Max stock</span><b class="v1">240</b><em class="d1">↑</em></div><div class="mr"><span>Safety stock</span><b class="v2">28</b><em class="d2">↑</em></div><i class="plus">+</i></div><div class="pcd pc1"><i class="bd"></i><div class="ph"><i class="ic" style="display:block;flex:none;width:54px;height:54px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i><div><div class="pn">Steel Shelf 120</div><div class="ps">SKU 20981</div></div></div><div class="mr"><span>Reorder point</span><b class="v0">31</b><em class="d0">↑</em></div><div class="mr"><span>Max stock</span><b class="v1">96</b><em class="d1">↑</em></div><div class="mr"><span>Safety stock</span><b class="v2">11</b><em class="d2">↑</em></div><i class="plus">+</i></div><div class="pcd pc0"><i class="bd"></i><div class="ph"><i class="ic" style="display:block;flex:none;width:54px;height:54px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i><div><div class="pn">Office Chair Pro</div><div class="ps">SKU 10417</div></div></div><div class="mr"><span>Reorder point</span><b class="v0">58</b><em class="d0">↑</em></div><div class="mr"><span>Max stock</span><b class="v1">140</b><em class="d1">↑</em></div><div class="mr"><span>Safety stock</span><b class="v2">18</b><em class="d2">↑</em></div><i class="plus">+</i></div></div>
+<div class="chips"><div class="chip c0"><i class="ic" style="display:block;flex:none;width:34px;height:34px;background:url(assets/icons/23f1.svg) center/contain no-repeat;"></i>Lead time 26d</div><div class="chip c1"><i class="ic" style="display:block;flex:none;width:34px;height:34px;background:url(assets/icons/1f501.svg) center/contain no-repeat;"></i>4 orders / mo</div><div class="chip c2"><i class="ic" style="display:block;flex:none;width:34px;height:34px;background:url(assets/icons/1f9fe.svg) center/contain no-repeat;"></i>€35 / order</div></div>
+
+</div>
+<script>
+(function(){
+var P='#s07-recalc-root', S=27.85;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+var PH=132,CY=470-54;
+tl.fromTo(P+' .blue',{scaleX:1},{scaleX:1000/1920,duration:.55,ease:'power3.inOut'},0);
+tl.fromTo(P+' .list',{y:1100},{y:CY+PH,duration:.7,ease:'power3.out'},T(28.1));
+tl.fromTo(P+' .pill',{opacity:0,x:-40},{opacity:1,x:0,duration:.4,stagger:.05},T(28.1));
+// card stack slots: front / mid / back
+var SL=[{x:0,y:0,scale:1,opacity:1},{x:0,y:-46,scale:.92,opacity:1},{x:0,y:-88,scale:.84,opacity:1},{x:0,y:-120,scale:.78,opacity:0}];
+for(var i=0;i<4;i++){tl.set(P+' .pc'+i,SL[i],0);}
+tl.fromTo(P+' .stack',{x:200,opacity:0},{x:0,opacity:1,duration:.6,ease:'power3.out'},T(28.3));
+tl.set(P+' .chip',{opacity:0,y:16},0);
+
+tl.to(P+' .list',{y:CY-0*PH,duration:.45,ease:'power3.inOut'},T(29.10));
+tl.set(P+' .p0',{color:'#10213F'},T(29.20));
+tl.to(P+' .p0',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(29.20));
+
+tl.to(P+' .list',{y:CY-1*PH,duration:.45,ease:'power3.inOut'},T(30.12));
+tl.set(P+' .p1',{color:'#10213F'},T(30.22));
+tl.to(P+' .p1',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(30.22));
+tl.set(P+' .p0',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(30.22));
+tl.to(P+' .p0',{x:0,scale:1,duration:.3},T(30.22));
+
+tl.to(P+' .list',{y:CY-2*PH,duration:.45,ease:'power3.inOut'},T(31.17));
+tl.set(P+' .p2',{color:'#10213F'},T(31.27));
+tl.to(P+' .p2',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(31.27));
+tl.set(P+' .p1',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(31.27));
+tl.to(P+' .p1',{x:0,scale:1,duration:.3},T(31.27));
+
+tl.to(P+' .list',{y:CY-3*PH,duration:.45,ease:'power3.inOut'},T(32.25));
+tl.set(P+' .p3',{color:'#10213F'},T(32.35));
+tl.to(P+' .p3',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(32.35));
+tl.set(P+' .p2',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(32.35));
+tl.to(P+' .p2',{x:0,scale:1,duration:.3},T(32.35));
+
+tl.to(P+' .list',{y:CY-4*PH,duration:.45,ease:'power3.inOut'},T(34.35));
+tl.set(P+' .p4',{color:'#10213F'},T(34.45));
+tl.to(P+' .p4',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(34.45));
+tl.set(P+' .p3',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(34.45));
+tl.to(P+' .p3',{x:0,scale:1,duration:.3},T(34.45));
+
+tl.to(P+' .list',{y:CY-5*PH,duration:.45,ease:'power3.inOut'},T(35.22));
+tl.set(P+' .p5',{color:'#10213F'},T(35.32));
+tl.to(P+' .p5',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(35.32));
+tl.set(P+' .p4',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(35.32));
+tl.to(P+' .p4',{x:0,scale:1,duration:.3},T(35.32));
+
+tl.to(P+' .list',{y:CY-6*PH,duration:.45,ease:'power3.inOut'},T(36.84));
+tl.set(P+' .p6',{color:'#10213F'},T(36.94));
+tl.to(P+' .p6',{backgroundColor:'#ffffff',x:46,scale:1.05,duration:.3,ease:'power2.out'},T(36.94));
+tl.set(P+' .p5',{backgroundColor:'rgba(255,255,255,.14)',color:'#ffffff'},T(36.94));
+tl.to(P+' .p5',{x:0,scale:1,duration:.3},T(36.94));
+
+var cv0={v:58};tl.to(cv0,{v:72,duration:.6,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .pc0 .v0').textContent=Math.round(cv0.v);}},T(29.25));
+tl.fromTo(P+' .pc0 .d0',{opacity:0,y:10},{opacity:1,y:0,duration:.3},T(29.55));
+
+var cv1={v:140};tl.to(cv1,{v:165,duration:.6,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .pc0 .v1').textContent=Math.round(cv1.v);}},T(30.27));
+tl.fromTo(P+' .pc0 .d1',{opacity:0,y:10},{opacity:1,y:0,duration:.3},T(30.57));
+
+var cv2={v:18};tl.to(cv2,{v:24,duration:.6,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .pc0 .v2').textContent=Math.round(cv2.v);}},T(31.32));
+tl.fromTo(P+' .pc0 .d2',{opacity:0,y:10},{opacity:1,y:0,duration:.3},T(31.62));
+
+tl.set(P+' .pc1 .mr em,'+P+' .pc2 .mr em,'+P+' .pc3 .mr em',{opacity:1},0);
+tl.set([P+' .pc1 > *',P+' .pc2 > *',P+' .pc3 > *'],{opacity:0},0);
+tl.set(P+' .pc0 .mr em',{opacity:0},0);
+function cycle(t,out,ins){tl.to(P+' .pc'+out+' > *',{opacity:0,duration:.15},t);
+  tl.to(P+' .pc'+out,{x:-260,rotation:-8,opacity:0,duration:.4,ease:'power2.in'},t);
+  tl.to(P+' .pc'+ins[0]+' > *',{opacity:1,duration:.25},t+.3);
+  ins.forEach(function(c,j){tl.to(P+' .pc'+c,Object.assign({duration:.45,ease:'power3.out'},SL[j]),t+.12);});}
+cycle(T(32.45),0,[1,2,3]);
+cycle(T(33.35),1,[2,3]);
+tl.to(P+' .c0',{opacity:1,y:0,duration:.35,ease:'back.out(2)'},T(34.5));
+tl.to(P+' .c1',{opacity:1,y:0,duration:.35,ease:'back.out(2)'},T(35.37));
+tl.to(P+' .c2',{opacity:1,y:0,duration:.35,ease:'back.out(2)'},T(36.99));
+tl.to([P+' .list',P+' .stack',P+' .chips'],{opacity:0,duration:.25},T(37.85));
+tl.to(P+' .blue',{scaleX:0,duration:.3,ease:'power3.in'},T(37.85));
+
+window.__timelines["s07-recalc"]=tl;
+})();
+</script>
+</template></body></html>

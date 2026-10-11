@@ -1,0 +1,66 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s03-minmax-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s03-minmax-root *{box-sizing:border-box;}
+#s03-minmax-root .abs{position:absolute;}
+#s03-minmax-root .fill{position:absolute;inset:0;}
+#s03-minmax-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s03-minmax-root img.ic{display:block;}
+#s03-minmax-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s03-minmax-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s03-minmax-root .top{position:absolute;left:0;right:0;top:120px;display:flex;justify-content:center;align-items:center;gap:30px;height:150px;}
+#s03-minmax-root .top .k{font-weight:600;font-size:60px;}
+#s03-minmax-root .top .k em{font-style:normal;color:#2563EB;margin-left:10px;}
+#s03-minmax-root .win{position:relative;width:520px;height:150px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);}
+#s03-minmax-root .reel{position:absolute;left:0;top:0;width:100%;}
+#s03-minmax-root .reel div{height:150px;line-height:150px;font-weight:700;font-size:76px;color:#5B7BD5;white-space:nowrap;}
+#s03-minmax-root .reel div.last{color:#E5322D;}
+#s03-minmax-root .tiles{position:absolute;left:0;right:0;top:330px;display:flex;justify-content:center;gap:70px;}
+#s03-minmax-root .tile{width:400px;height:330px;background:#fff;border-radius:34px;box-shadow:0 30px 60px rgba(20,27,60,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;}
+#s03-minmax-root .tile .l{font-weight:600;font-size:34px;color:#8A94A6;letter-spacing:4px;}
+#s03-minmax-root .tile .n{font-weight:800;font-size:170px;line-height:1;color:#141B3C;}
+#s03-minmax-root .note{position:absolute;left:1230px;top:650px;width:390px;padding:26px 30px;background:#FFE27A;border-radius:10px;
+  box-shadow:0 18px 30px rgba(20,27,60,.18);font-weight:600;font-size:38px;display:flex;align-items:center;gap:16px;}
+</style>
+<div id="s03-minmax-root" data-composition-id="s03-minmax" data-width="1920" data-height="1080">
+
+<div class="top"><div class="k">Last updated<em>›</em></div><div class="win"><div class="reel"><div class="">Today</div><div class="">Last month</div><div class="">Last year</div><div class="last">2 years ago</div></div></div></div>
+<div class="tiles"><div class="tile t0"><div class="l">MIN</div><div class="n">40</div></div><div class="tile t1"><div class="l">MAX</div><div class="n">120</div></div></div>
+<div class="note"><i class="ic" style="display:block;flex:none;width:46px;height:46px;background:url(assets/icons/2753.svg) center/contain no-repeat;"></i><span>Just a guess</span></div>
+
+</div>
+<script>
+(function(){
+var P='#s03-minmax-root', S=7.4;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .top',{opacity:0,y:30},{opacity:1,y:0,duration:.4,ease:'power3.out'},0.05);
+tl.fromTo(P+' .t0',{y:80,opacity:0,scale:.9},{y:0,opacity:1,scale:1,duration:.5,ease:'back.out(1.6)'},T(7.53));
+tl.fromTo(P+' .t1',{y:80,opacity:0,scale:.9},{y:0,opacity:1,scale:1,duration:.5,ease:'back.out(1.6)'},T(8.04));
+tl.to(P+' .tile',{backgroundColor:'#EEF1F5',duration:.5},T(8.79));
+tl.to(P+' .tile .n',{color:'#A3ABB7',duration:.5},T(8.79));
+// Lisa-style rolling carousel with motion blur, landing on "2 years ago"
+tl.to(P+' .reel',{y:-150,filter:'blur(6px)',duration:.28,ease:'power2.in'},T(9.62));
+tl.to(P+' .reel',{y:-300,duration:.24,ease:'none'},T(9.90));
+tl.to(P+' .reel',{y:-450,filter:'blur(0px)',duration:.45,ease:'back.out(1.6)'},T(10.14));
+tl.fromTo(P+' .note',{scale:1.7,rotation:16,opacity:0},{scale:1,rotation:6,opacity:1,duration:.3,ease:'power4.out'},T(9.99));
+tl.fromTo(P+' .tiles',{x:0},{x:-10,duration:.05,yoyo:true,repeat:3,ease:'none'},T(10.25));
+tl.to([P+' .top',P+' .tiles',P+' .note'],{opacity:0,filter:'blur(10px)',duration:.25,ease:'power2.in'},T(11.33));
+
+window.__timelines["s03-minmax"]=tl;
+})();
+</script>
+</template></body></html>

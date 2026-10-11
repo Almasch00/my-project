@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s01-hook-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s01-hook-root *{box-sizing:border-box;}
+#s01-hook-root .abs{position:absolute;}
+#s01-hook-root .fill{position:absolute;inset:0;}
+#s01-hook-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s01-hook-root img.ic{display:block;}
+#s01-hook-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s01-hook-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s01-hook-root .glow{position:absolute;left:460px;top:120px;width:1000px;height:700px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(255,255,255,.75),rgba(255,255,255,0));}
+#s01-hook-root .stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;padding-bottom:170px;}
+#s01-hook-root .head{font-weight:700;font-size:64px;letter-spacing:-.5px;display:flex;gap:18px;}
+#s01-hook-root .head .w{display:inline-block;}
+#s01-hook-root .head .hl{color:#2563EB;}
+#s01-hook-root .card{width:1120px;background:#fff;border-radius:32px;box-shadow:0 30px 60px rgba(20,27,60,.14);padding:40px 54px;}
+#s01-hook-root .row1{display:flex;align-items:center;gap:18px;font-weight:600;font-size:42px;}
+#s01-hook-root .row1 .ref{margin-left:auto;font-weight:500;font-size:24px;color:#8A94A6;}
+#s01-hook-root .prod{margin-top:6px;font-weight:500;font-size:30px;color:#6B7487;}
+#s01-hook-root .grid{margin-top:26px;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:20px;}
+#s01-hook-root .cell{background:#F3F6FA;border-radius:18px;padding:16px 22px;}
+#s01-hook-root .lbl{font-size:24px;font-weight:500;color:#8A94A6;}
+#s01-hook-root .val{font-size:58px;font-weight:700;}
+#s01-hook-root .stale{display:inline-block;color:#E5322D;}
+</style>
+<div id="s01-hook-root" data-composition-id="s01-hook" data-width="1920" data-height="1080">
+
+<div class="glow"></div>
+<div class="stack">
+  <div class="head"><span class="w">When</span><span class="w">did</span><span class="w">someone</span><span class="w">last</span><span class="w">touch</span><span class="w">your</span><span class="w hl">reorder</span><span class="w hl">rules?</span></div>
+  <div class="card">
+    <div class="row1"><i class="ic" style="display:block;flex:none;width:44px;height:44px;background:url(assets/icons/2699.svg) center/contain no-repeat;"></i><span>Reorder Rule</span><span class="ref">WH/OP/00417</span></div>
+    <div class="prod">Office Chair Pro · Warehouse A</div>
+    <div class="grid">
+      <div class="cell"><div class="lbl">Min Qty</div><div class="val">40</div></div>
+      <div class="cell"><div class="lbl">Max Qty</div><div class="val">120</div></div>
+      <div class="cell"><div class="lbl">Last modified</div><div class="val"><span class="stale">2 years ago</span></div></div>
+    </div>
+  </div>
+</div>
+<div class="cursor"><svg viewBox="0 0 32 32" width="54" height="54"><path d="M6 3 L6 25 L11.5 20 L15.5 29 L19.5 27.3 L15.6 18.6 L23 18.6 Z" fill="#fff" stroke="#111" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="ripple"></div>
+
+</div>
+<script>
+(function(){
+var P='#s01-hook-root', S=0.0;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .card',{y:70,opacity:0,filter:'blur(14px)'},{y:0,opacity:1,filter:'blur(0px)',duration:.7,ease:'power3.out'},T(0.05));
+tl.fromTo(P+' .head .w:nth-child(1)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.06));
+tl.fromTo(P+' .head .w:nth-child(2)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.30));
+tl.fromTo(P+' .head .w:nth-child(3)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.48));
+tl.fromTo(P+' .head .w:nth-child(4)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(0.90));
+tl.fromTo(P+' .head .w:nth-child(5)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(1.24));
+tl.fromTo(P+' .head .w:nth-child(6)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(1.50));
+tl.fromTo(P+' .head .w:nth-child(7)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(1.68));
+tl.fromTo(P+' .head .w:nth-child(8)',{y:34,opacity:0},{y:0,opacity:1,duration:.32,ease:'back.out(2.2)'},T(2.19));
+
+tl.fromTo(P+' .cursor',{x:1500,y:900},{x:1400,y:700,duration:1.0,ease:'power2.inOut'},T(1.0));
+tl.fromTo(P+' .ripple',{x:1360,y:660,scale:.3,opacity:.9},{scale:1.4,opacity:0,duration:.5,ease:'power2.out'},T(2.2));
+tl.to(P+' .stale',{scale:1.18,duration:.18,yoyo:true,repeat:1,ease:'power2.out'},T(2.2));
+tl.to(P+' .stack',{opacity:0,y:-30,filter:'blur(10px)',duration:.28,ease:'power2.in'},T(2.78));
+tl.to(P+' .cursor',{opacity:0,duration:.2},T(2.8));
+
+window.__timelines["s01-hook"]=tl;
+})();
+</script>
+</template></body></html>

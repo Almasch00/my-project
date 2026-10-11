@@ -1,0 +1,72 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s09-replenish-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s09-replenish-root *{box-sizing:border-box;}
+#s09-replenish-root .abs{position:absolute;}
+#s09-replenish-root .fill{position:absolute;inset:0;}
+#s09-replenish-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s09-replenish-root img.ic{display:block;}
+#s09-replenish-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s09-replenish-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s09-replenish-root .card{position:absolute;left:340px;top:90px;width:1240px;height:680px;border-radius:60px;background:#0D111C;color:#fff;transform-origin:50% 50%;}
+#s09-replenish-root .ttl{position:absolute;left:80px;top:250px;width:360px;font-weight:600;font-size:66px;line-height:1.1;}
+#s09-replenish-root .ttl small{display:block;font-weight:500;font-size:28px;color:#8EA0C2;margin-top:16px;line-height:1.3;}
+#s09-replenish-root .rows{position:absolute;left:470px;top:80px;width:720px;}
+#s09-replenish-root .rw{position:relative;height:172px;display:flex;align-items:center;gap:34px;padding-left:44px;border-radius:30px;margin-bottom:10px;}
+#s09-replenish-root .ck{position:absolute;left:-22px;top:18px;width:58px;height:58px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;}
+#s09-replenish-root .ck svg{width:30px;height:30px;}
+#s09-replenish-root .tileI{width:128px;height:128px;border-radius:30px;background:#2E6BF0;display:flex;align-items:center;justify-content:center;flex:none;}
+#s09-replenish-root .tx b{display:block;font-family:'Roboto';font-weight:500;font-size:42px;}
+#s09-replenish-root .tx span{display:block;font-family:'Roboto';font-weight:500;font-size:28px;color:#8EA0C2;margin-top:6px;}
+</style>
+<div id="s09-replenish-root" data-composition-id="s09-replenish" data-width="1920" data-height="1080">
+
+<div class="card"><div class="ttl in">Replenish by<small>Your choice, per product</small></div>
+ <div class="rows"><div class="rw r0"><div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 7" stroke="#2E6BF0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tileI"><i class="ic" style="display:block;flex:none;width:84px;height:84px;background:url(assets/icons/1f9ee.svg) center/contain no-repeat;"></i></div><div class="tx"><b>Economic Order Quantity</b><span>EOQ · 240 units per order</span></div></div><div class="rw r1"><div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 7" stroke="#2E6BF0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tileI"><i class="ic" style="display:block;flex:none;width:84px;height:84px;background:url(assets/icons/1f3ed.svg) center/contain no-repeat;"></i></div><div class="tx"><b>Supplier Minimum</b><span>MOQ · 500 units</span></div></div><div class="rw r2"><div class="ck"><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 7" stroke="#2E6BF0" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="tileI"><i class="ic" style="display:block;flex:none;width:84px;height:84px;background:url(assets/icons/1f69b.svg) center/contain no-repeat;"></i></div><div class="tx"><b>Full Pallets</b><span>1 pallet = 48 cartons</span></div></div></div></div>
+
+</div>
+<script>
+(function(){
+var P='#s09-replenish-root', S=43.45;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .card',{scaleX:.035,scaleY:.85,opacity:0},{scaleX:.035,scaleY:.85,opacity:1,duration:.08},T(43.48));
+tl.to(P+' .card',{scaleX:1,scaleY:1,duration:.5,ease:'power3.out'},T(43.56));
+tl.fromTo(P+' .ttl',{opacity:0,x:-30},{opacity:1,x:0,duration:.4},T(43.98));
+tl.fromTo(P+' .rw',{opacity:0,x:60},{opacity:.35,x:0,duration:.4,stagger:.1,ease:'power3.out'},T(44.2));
+tl.set(P+' .ck',{scale:0},0);
+
+tl.to(P+' .r0',{opacity:1,backgroundColor:'rgba(46,107,240,.16)',duration:.3},T(46.05));
+tl.to(P+' .r0 .ck',{scale:1,duration:.35,ease:'back.out(3)'},T(46.30));
+tl.to(P+' .r0 .tileI',{scale:1.1,duration:.18,yoyo:true,repeat:1},T(46.05));
+tl.to(P+' .r0',{backgroundColor:'rgba(46,107,240,0)',duration:.3},T(47.64));
+
+tl.to(P+' .r1',{opacity:1,backgroundColor:'rgba(46,107,240,.16)',duration:.3},T(47.64));
+tl.to(P+' .r1 .ck',{scale:1,duration:.35,ease:'back.out(3)'},T(47.89));
+tl.to(P+' .r1 .tileI',{scale:1.1,duration:.18,yoyo:true,repeat:1},T(47.64));
+tl.to(P+' .r1',{backgroundColor:'rgba(46,107,240,0)',duration:.3},T(49.38));
+
+tl.to(P+' .r2',{opacity:1,backgroundColor:'rgba(46,107,240,.16)',duration:.3},T(49.38));
+tl.to(P+' .r2 .ck',{scale:1,duration:.35,ease:'back.out(3)'},T(49.63));
+tl.to(P+' .r2 .tileI',{scale:1.1,duration:.18,yoyo:true,repeat:1},T(49.38));
+
+tl.to(P+' .card > *',{opacity:0,duration:.15},T(50.2));
+tl.to(P+' .card',{scaleX:.035,duration:.25,ease:'power3.in'},T(50.25));
+tl.to(P+' .card',{scaleY:.004,opacity:0,duration:.1,ease:'power2.in'},T(50.5));
+
+window.__timelines["s09-replenish"]=tl;
+})();
+</script>
+</template></body></html>

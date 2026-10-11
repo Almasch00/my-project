@@ -1,0 +1,82 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s02-changed-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s02-changed-root *{box-sizing:border-box;}
+#s02-changed-root .abs{position:absolute;}
+#s02-changed-root .fill{position:absolute;inset:0;}
+#s02-changed-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s02-changed-root img.ic{display:block;}
+#s02-changed-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s02-changed-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s02-changed-root .list{position:absolute;left:250px;top:200px;}
+#s02-changed-root .it{position:relative;height:200px;display:flex;align-items:flex-start;gap:44px;}
+#s02-changed-root .dot{position:relative;width:84px;height:84px;border-radius:50%;border:10px solid #C9D0D9;background:#DDE7F1;flex:none;}
+#s02-changed-root .dot i{position:absolute;left:12px;top:12px;width:40px;height:40px;border-radius:50%;background:#2B7BE0;display:block;}
+#s02-changed-root .lab{font-weight:700;font-size:66px;line-height:84px;color:#747D8B;}
+#s02-changed-root .seg{position:absolute;left:37px;top:84px;width:10px;height:116px;background:#C9D0D9;}
+#s02-changed-root .seg b{display:block;width:100%;height:100%;background:#2B7BE0;transform-origin:50% 0;}
+#s02-changed-root .stage{position:absolute;left:1180px;top:170px;width:480px;height:600px;}
+#s02-changed-root .ico{position:absolute;left:60px;top:0;width:360px;height:360px;}
+#s02-changed-root .chip{position:absolute;left:0;right:0;top:420px;text-align:center;}
+#s02-changed-root .chip span{display:inline-block;background:#fff;border-radius:40px;padding:14px 30px;font-weight:600;font-size:32px;color:#141B3C;box-shadow:0 14px 30px rgba(20,27,60,.12);}
+</style>
+<div id="s02-changed-root" data-composition-id="s02-changed" data-width="1920" data-height="1080">
+
+<div class="list">
+<div class="it it0"><div class="dot"><i></i></div><div class="lab">Lead Times</div><div class=seg><b></b></div></div><div class="it it1"><div class="dot"><i></i></div><div class="lab">Demand</div><div class=seg><b></b></div></div><div class="it it2"><div class="dot"><i></i></div><div class="lab">Prices</div></div>
+</div>
+<div class="stage">
+<div class="ico ico0"><i class="ic" style="display:block;flex:none;width:360px;height:360px;background:url(assets/icons/23f1.svg) center/contain no-repeat;"></i></div><div class="ico ico1"><i class="ic" style="display:block;flex:none;width:360px;height:360px;background:url(assets/icons/1f4c8.svg) center/contain no-repeat;"></i></div><div class="ico ico2"><i class="ic" style="display:block;flex:none;width:360px;height:360px;background:url(assets/icons/1f3f7.svg) center/contain no-repeat;"></i></div>
+<div class="chip chip0"><span>Lead time: 14 → 26 days</span></div><div class="chip chip1"><span>Demand up 45%</span></div><div class="chip chip2"><span>Prices up 8%</span></div>
+</div>
+
+</div>
+<script>
+(function(){
+var P='#s02-changed-root', S=3.05;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+tl.fromTo(P+' .it',{x:-60,opacity:0},{x:0,opacity:1,duration:.45,stagger:.08,ease:'power3.out'},0);
+tl.set(P+' .dot i',{scale:0},0);tl.set(P+' .seg b',{scaleY:0},0);tl.set(P+' .ico',{opacity:0},0);tl.set(P+' .chip',{opacity:0},0);
+
+tl.to(P+' .it0 .dot',{borderColor:'#2B7BE0',duration:.25},T(3.15));
+tl.fromTo(P+' .it0 .dot i',{scale:0},{scale:1,duration:.35,ease:'back.out(3)'},T(3.15));
+tl.to(P+' .it0 .lab',{color:'#2B7BE0',duration:.25},T(3.15));
+tl.fromTo(P+' .ico0',{scale:.2,rotation:-18,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:'back.out(1.8)'},T(3.15));
+tl.fromTo(P+' .chip0',{y:24,opacity:0},{y:0,opacity:1,duration:.35,ease:'power3.out'},T(3.4));
+tl.to(P+' .ico0',{scale:.6,opacity:0,duration:.25,ease:'power2.in'},T(4.43));
+tl.to(P+' .chip0',{opacity:0,duration:.2},T(4.43));
+tl.to(P+' .it0 .seg b',{scaleY:1,duration:.35,ease:'power2.inOut'},T(4.33));
+
+tl.to(P+' .it1 .dot',{borderColor:'#2B7BE0',duration:.25},T(4.68));
+tl.fromTo(P+' .it1 .dot i',{scale:0},{scale:1,duration:.35,ease:'back.out(3)'},T(4.68));
+tl.to(P+' .it1 .lab',{color:'#2B7BE0',duration:.25},T(4.68));
+tl.fromTo(P+' .ico1',{scale:.2,rotation:-18,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:'back.out(1.8)'},T(4.68));
+tl.fromTo(P+' .chip1',{y:24,opacity:0},{y:0,opacity:1,duration:.35,ease:'power3.out'},T(4.93));
+tl.to(P+' .ico1',{scale:.6,opacity:0,duration:.25,ease:'power2.in'},T(5.75));
+tl.to(P+' .chip1',{opacity:0,duration:.2},T(5.75));
+tl.to(P+' .it1 .seg b',{scaleY:1,duration:.35,ease:'power2.inOut'},T(5.65));
+
+tl.to(P+' .it2 .dot',{borderColor:'#2B7BE0',duration:.25},T(6.0));
+tl.fromTo(P+' .it2 .dot i',{scale:0},{scale:1,duration:.35,ease:'back.out(3)'},T(6.0));
+tl.to(P+' .it2 .lab',{color:'#2B7BE0',duration:.25},T(6.0));
+tl.fromTo(P+' .ico2',{scale:.2,rotation:-18,opacity:0},{scale:1,rotation:0,opacity:1,duration:.5,ease:'back.out(1.8)'},T(6.0));
+tl.fromTo(P+' .chip2',{y:24,opacity:0},{y:0,opacity:1,duration:.35,ease:'power3.out'},T(6.25));
+
+tl.to([P+' .list',P+' .stage'],{opacity:0,y:-40,duration:.25,ease:'power2.in'},T(7.13));
+
+window.__timelines["s02-changed"]=tl;
+})();
+</script>
+</template></body></html>

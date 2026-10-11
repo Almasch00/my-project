@@ -1,0 +1,85 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s06-meet-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s06-meet-root *{box-sizing:border-box;}
+#s06-meet-root .abs{position:absolute;}
+#s06-meet-root .fill{position:absolute;inset:0;}
+#s06-meet-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s06-meet-root img.ic{display:block;}
+#s06-meet-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s06-meet-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s06-meet-root svg.rib{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:visible;}
+#s06-meet-root .r1,#s06-meet-root .r2{transform-origin:960px 540px;}
+#s06-meet-root .lab{position:absolute;left:0;right:0;top:470px;display:flex;justify-content:center;}
+#s06-meet-root .lab span{display:block;background:linear-gradient(180deg,#F7682D,#E5322D);color:#fff;font-weight:500;font-size:64px;padding:8px 34px;border-radius:6px;}
+#s06-meet-root .lock{position:absolute;left:0;right:0;top:80px;height:700px;display:flex;align-items:center;justify-content:center;gap:70px;}
+#s06-meet-root .bot{width:360px;height:372px;}
+#s06-meet-root .bot img{width:360px;height:372px;display:block;}
+#s06-meet-root .col{display:flex;flex-direction:column;align-items:flex-start;gap:20px;}
+#s06-meet-root .name{font-weight:800;font-size:190px;line-height:.95;letter-spacing:-4px;background:linear-gradient(180deg,#F7682D 0%,#E5322D 60%,#B5244A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#s06-meet-root .role{display:block;background:linear-gradient(180deg,#F7682D,#E5322D);color:#fff;font-weight:500;font-size:40px;padding:6px 24px;border-radius:6px;}
+#s06-meet-root .by{display:flex;align-items:center;gap:18px;font-weight:500;font-size:30px;color:#6B7487;}
+#s06-meet-root .by img{height:130px;width:267px;display:block;margin:-20px 0;}
+#s06-meet-root .od{display:flex;align-items:center;gap:16px;background:#fff;border-radius:40px;padding:12px 26px;box-shadow:0 14px 30px rgba(20,27,60,.12);font-weight:600;font-size:30px;}
+#s06-meet-root .wipe{position:absolute;left:0;top:0;width:1920px;height:1080px;background:#2563EB;transform-origin:0 50%;}
+</style>
+<div id="s06-meet-root" data-composition-id="s06-meet" data-width="1920" data-height="1080">
+
+<svg class="rib" viewBox="0 0 1920 1080" data-layout-allow-overlap>
+ <defs>
+  <linearGradient id="s06-g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7682D"/><stop offset=".6" stop-color="#E5322D"/><stop offset="1" stop-color="#6B2A8C"/></linearGradient>
+  <linearGradient id="s06-g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A4A8C"/><stop offset=".55" stop-color="#1A2456"/><stop offset="1" stop-color="#0B1030"/></linearGradient>
+  <path id="s06-p" d="M -260 760 C 300 300, 1100 250, 2200 480"/>
+ </defs>
+ <g class="r1"><path d="M -260 760 C 300 300, 1100 250, 2200 480" stroke="url(#s06-g1)" stroke-width="330" fill="none"/>
+  <text data-layout-allow-overlap font-family="Poppins" font-weight="500" font-size="190" fill="#fff" dy="64"><textPath href="#s06-p" startOffset="22%">Meet</textPath></text></g>
+ <g class="r2"><path d="M -260 760 C 300 300, 1100 250, 2200 480" stroke="url(#s06-g2)" stroke-width="330" fill="none"/>
+  <text data-layout-allow-overlap font-family="Poppins" font-weight="500" font-size="200" fill="#fff" dy="66"><textPath href="#s06-p" startOffset="20%">Billie</textPath></text></g>
+</svg>
+<div class="lab"><span>AI Procurement Agent</span></div>
+<div class="lock">
+ <div class="bot"><img src="assets/billie.png" alt="Billie"></div>
+ <div class="col"><div class="name">Billie</div><div class="role">AI Procurement Agent</div>
+  <div class="by">by <img src="assets/bayforward.svg" alt="Bay Forward"></div>
+  <div class="od">Works inside your <svg viewBox="0 9.05 24 5.9" style="height:40px;width:163px;display:block"><path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z" fill="#714B67"/></svg></div></div>
+</div>
+<div class="wipe"></div>
+
+</div>
+<script>
+(function(){
+var P='#s06-meet-root', S=22.7;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.set(P+' .wipe',{scaleX:0},0);
+tl.fromTo(P+' .r1',{x:-1900,rotation:-14,opacity:1},{x:0,rotation:0,duration:.45,ease:'power3.out'},T(22.74));
+tl.fromTo(P+' .r2',{x:-1900,rotation:-14},{x:0,rotation:0,duration:.45,ease:'power3.out'},T(23.12));
+tl.to(P+' .r1',{opacity:0,duration:.1},T(23.5));
+tl.to(P+' .r2',{x:2100,rotation:10,duration:.4,ease:'power3.in'},T(23.82));
+tl.set(P+' .r2',{opacity:0},T(24.25));
+tl.fromTo(P+' .lab span',{scaleX:2.2,scaleY:.3,opacity:0},{scaleX:1,scaleY:1,opacity:1,duration:.35,ease:'back.out(1.6)'},T(24.0));
+tl.to(P+' .lab',{opacity:0,y:-40,duration:.2},T(24.55));
+tl.fromTo(P+' .bot',{scale:0,rotation:-12},{scale:1,rotation:0,duration:.6,ease:'back.out(1.8)'},T(24.6));
+tl.fromTo(P+' .name',{x:-60,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},T(24.7));
+tl.fromTo(P+' .role',{scaleX:0,opacity:0},{scaleX:1,opacity:1,duration:.35,ease:'power3.out',transformOrigin:'0 50%'},T(24.9));
+tl.fromTo(P+' .by',{y:20,opacity:0},{y:0,opacity:1,duration:.4},T(25.23));
+tl.fromTo(P+' .od',{y:20,opacity:0,scale:.9},{y:0,opacity:1,scale:1,duration:.4,ease:'back.out(2)'},T(26.6));
+tl.to(P+' .bot',{y:-14,duration:.7,yoyo:true,repeat:3,ease:'sine.inOut'},T(25.2));
+tl.to(P+' .wipe',{scaleX:1,duration:.32,ease:'power3.in'},T(27.53));
+
+window.__timelines["s06-meet"]=tl;
+})();
+</script>
+</template></body></html>

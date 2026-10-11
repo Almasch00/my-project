@@ -1,0 +1,74 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s10-exceptions-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s10-exceptions-root *{box-sizing:border-box;}
+#s10-exceptions-root .abs{position:absolute;}
+#s10-exceptions-root .fill{position:absolute;inset:0;}
+#s10-exceptions-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s10-exceptions-root img.ic{display:block;}
+#s10-exceptions-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s10-exceptions-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s10-exceptions-root .top{position:absolute;left:0;right:0;top:90px;height:110px;display:flex;align-items:center;justify-content:center;gap:34px;}
+#s10-exceptions-root .top .w{font-weight:600;font-size:72px;}
+#s10-exceptions-root .top .w span{display:inline-block;margin-right:20px;}
+#s10-exceptions-root .tbl{position:absolute;left:220px;top:260px;width:1060px;background:#fff;border-radius:30px;box-shadow:0 30px 60px rgba(20,27,60,.13);padding:20px 34px;overflow:hidden;}
+#s10-exceptions-root .tr{position:relative;display:grid;grid-template-columns:400px 130px 130px 1fr;align-items:center;height:84px;border-top:2px solid #EEF1F5;font-weight:500;font-size:30px;border-radius:14px;padding:0 14px;}
+#s10-exceptions-root .tr.h{border-top:none;height:60px;font-size:22px;font-weight:600;color:#8A94A6;letter-spacing:2px;}
+#s10-exceptions-root .st{display:flex;align-items:center;gap:12px;}
+#s10-exceptions-root .ok{color:#16A34A;font-weight:600;font-size:26px;}
+#s10-exceptions-root .ex{position:absolute;right:14px;display:flex;align-items:center;gap:10px;background:#E5322D;color:#fff;border-radius:30px;padding:8px 20px;font-weight:600;font-size:26px;}
+#s10-exceptions-root .beam{position:absolute;left:0;right:0;top:0;height:90px;background:linear-gradient(180deg,rgba(0,227,250,0),rgba(0,227,250,.35),rgba(0,227,250,0));}
+#s10-exceptions-root .bot{position:absolute;left:1390px;top:270px;width:330px;height:341px;}
+#s10-exceptions-root .bot img{width:330px;height:341px;display:block;}
+#s10-exceptions-root .cnt{position:absolute;left:1350px;top:640px;width:410px;text-align:center;}
+#s10-exceptions-root .cnt span{display:inline-flex;align-items:center;gap:12px;background:#141B3C;color:#fff;border-radius:40px;padding:12px 28px;font-weight:600;font-size:30px;}
+</style>
+<div id="s10-exceptions-root" data-composition-id="s10-exceptions" data-width="1920" data-height="1080">
+
+<div class="top"><svg viewBox="0 9.05 24 5.9" style="height:96px;width:391px;display:block"><path d="M21.1002 15.7957c-1.6015 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2979 2.8998-2.8998 2.8998zm0-1.2c.9388.0006 1.7003-.7601 1.7008-1.6989.0004-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zm-6.0655 1.2c-1.6014 0-2.8997-1.2983-2.8997-2.8998s1.2983-2.8997 2.8997-2.8997c1.6015 0 2.8998 1.2982 2.8998 2.8997 0 1.5999-1.2999 2.8998-2.8998 2.8998zm0-1.2c.9389.0006 1.7003-.7601 1.7008-1.6989.0005-.9388-.7602-1.7003-1.699-1.7007h-.0018c-.9388.0004-1.6994.7619-1.699 1.7007.0005.9381.761 1.6985 1.699 1.699zM11.865 12.858c0 1.6199-1.2979 2.9378-2.8977 2.9378s-2.8998-1.314-2.8998-2.9358 1.1799-2.8597 2.8998-2.8597c.6359 0 1.2239.134 1.6998.484v-1.68a.6.6 0 0 1 1.2 0v4.0537h-.002zm-2.8977 1.7399c.9388.0005 1.7002-.7602 1.7007-1.699.0005-.9388-.7602-1.7003-1.699-1.7007h-.0017c-.9389.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699zm-6.0675 1.1979C1.2983 15.7957 0 14.4974 0 12.8959s1.2983-2.8997 2.8998-2.8997 2.8997 1.2982 2.8997 2.8997c0 1.5999-1.2999 2.8998-2.8997 2.8998zm0-1.2c.9388.0006 1.7002-.7601 1.7007-1.699.0005-.9387-.7602-1.7002-1.699-1.7006h-.0017c-.9388.0004-1.6995.7619-1.699 1.7007.0004.9381.7608 1.6985 1.699 1.699z" fill="#714B67"/></svg><div class="w"><span>runs</span><span>on</span><span>rules</span></div></div>
+<div class="tbl"><div class="tr h"><div>PRODUCT</div><div>MIN</div><div>MAX</div><div>RULE</div></div>
+<div class="tr t0"><div>Office Chair Pro</div><div>40</div><div>120</div><div class="st"><span class="ok">✓ OK</span></div></div><div class="tr t1"><div>Steel Shelf 120</div><div>25</div><div>80</div><div class="st"><span class="ok">✓ OK</span></div><div class="ex"><i class="ic" style="display:block;flex:none;width:30px;height:30px;background:url(assets/icons/26a0.svg) center/contain no-repeat;"></i>Lead time +12d</div></div><div class="tr t2"><div>LED Panel 60W</div><div>60</div><div>200</div><div class="st"><span class="ok">✓ OK</span></div></div><div class="tr t3"><div>Desk Lamp Arc</div><div>30</div><div>90</div><div class="st"><span class="ok">✓ OK</span></div><div class="ex"><i class="ic" style="display:block;flex:none;width:30px;height:30px;background:url(assets/icons/26a0.svg) center/contain no-repeat;"></i>Demand +45%</div></div><div class="tr t4"><div>Cable Kit</div><div>100</div><div>400</div><div class="st"><span class="ok">✓ OK</span></div></div>
+<div class="beam"></div></div>
+<div class="bot"><img src="assets/billie.png" alt="Billie"></div>
+<div class="cnt"><span><i class="ic" style="display:block;flex:none;width:34px;height:34px;background:url(assets/icons/1f50d.svg) center/contain no-repeat;"></i>2 exceptions caught</span></div>
+
+</div>
+<script>
+(function(){
+var P='#s10-exceptions-root', S=50.6;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .top svg',{scale:.4,opacity:0},{scale:1,opacity:1,duration:.45,ease:'back.out(2)'},T(50.73));
+tl.fromTo(P+' .top .w span',{y:30,opacity:0},{y:0,opacity:1,duration:.3,stagger:.3,ease:'back.out(2)'},T(51.12));
+tl.fromTo(P+' .tbl',{y:40,opacity:0},{y:0,opacity:1,duration:.4,ease:'power3.out'},T(51.6));
+tl.fromTo(P+' .tr',{opacity:0,x:-30},{opacity:1,x:0,duration:.3,stagger:.07,ease:'power3.out'},T(51.75));
+tl.set(P+' .ex',{opacity:0,scale:.5},0);tl.set(P+' .beam',{opacity:0},0);
+tl.fromTo(P+' .bot',{x:500,rotation:15},{x:0,rotation:0,duration:.55,ease:'back.out(1.4)'},T(52.6));
+tl.fromTo(P+' .beam',{y:40,opacity:1},{y:480,duration:1.6,ease:'none'},T(52.95));
+tl.to(P+' .beam',{opacity:0,duration:.2},T(54.55));
+tl.to(P+' .t1',{backgroundColor:'#FDE7E6',duration:.25},T(53.61));
+tl.to(P+' .t1 .ok',{opacity:0,duration:.15},T(53.61));
+tl.to(P+' .t1 .ex',{opacity:1,scale:1,duration:.35,ease:'back.out(2.5)'},T(53.61));
+tl.to(P+' .t3',{backgroundColor:'#FDE7E6',duration:.25},T(54.30));
+tl.to(P+' .t3 .ok',{opacity:0,duration:.15},T(54.30));
+tl.to(P+' .t3 .ex',{opacity:1,scale:1,duration:.35,ease:'back.out(2.5)'},T(54.30));
+tl.fromTo(P+' .cnt',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'back.out(2)'},T(54.6));
+tl.to(P+' .bot',{y:-12,duration:.5,yoyo:true,repeat:1,ease:'sine.inOut'},T(53.3));
+tl.to([P+' .top',P+' .tbl',P+' .bot',P+' .cnt'],{opacity:0,y:-30,duration:.25,ease:'power2.in'},T(55.3));
+
+window.__timelines["s10-exceptions"]=tl;
+})();
+</script>
+</template></body></html>

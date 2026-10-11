@@ -1,0 +1,88 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s11-setup-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s11-setup-root *{box-sizing:border-box;}
+#s11-setup-root .abs{position:absolute;}
+#s11-setup-root .fill{position:absolute;inset:0;}
+#s11-setup-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s11-setup-root img.ic{display:block;}
+#s11-setup-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s11-setup-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s11-setup-root .tg{position:absolute;left:0;right:0;top:170px;display:flex;flex-direction:column;align-items:center;gap:48px;}
+#s11-setup-root .tg .q{font-weight:600;font-size:64px;}
+#s11-setup-root .sw{position:relative;width:340px;height:150px;}
+#s11-setup-root .sw .glow{position:absolute;left:150px;top:-10px;width:170px;height:170px;border-radius:50%;background:radial-gradient(closest-side,rgba(229,50,45,.45),rgba(229,50,45,0));}
+#s11-setup-root .sw .pillb{position:absolute;inset:0;border-radius:75px;background:#F6F7F9;box-shadow:0 14px 30px rgba(20,27,60,.12);}
+#s11-setup-root .sw .knob{position:absolute;left:18px;top:18px;width:114px;height:114px;border-radius:50%;background:#1F1F23;}
+#s11-setup-root .sw .on{position:absolute;left:180px;top:0;height:150px;line-height:150px;font-weight:600;font-size:44px;}
+#s11-setup-root .sw .off{position:absolute;left:50px;top:0;height:150px;line-height:150px;font-weight:600;font-size:44px;opacity:0;}
+#s11-setup-root .steps{position:absolute;left:0;top:0;width:1920px;height:1080px;}
+#s11-setup-root .ln{position:absolute;top:385px;height:10px;background:#C9D0D9;border-radius:5px;}
+#s11-setup-root .ln b{display:block;width:100%;height:100%;background:#2B7BE0;border-radius:5px;transform-origin:0 50%;}
+#s11-setup-root .st{position:absolute;top:300px;width:180px;height:180px;border-radius:50%;background:#fff;border:10px solid #C9D0D9;display:flex;align-items:center;justify-content:center;}
+#s11-setup-root .st img.rb{width:112px;height:116px;display:block;}
+#s11-setup-root .sl{position:absolute;top:510px;width:440px;text-align:center;}
+#s11-setup-root .sl small{display:block;font-weight:600;font-size:26px;letter-spacing:4px;color:#2B7BE0;}
+#s11-setup-root .sl b{display:block;font-weight:700;font-size:44px;}
+</style>
+<div id="s11-setup-root" data-composition-id="s11-setup" data-width="1920" data-height="1080">
+
+<div class="tg"><div class="q">Implementation project</div>
+ <div class="sw"><div class="glow"></div><div class="pillb"></div><div class="on">On</div><div class="off">Off</div><div class="knob"></div></div></div>
+<div class="steps">
+ <div class="ln l0" style="left:550px;width:320px"><b></b></div>
+ <div class="ln l1" style="left:1050px;width:320px"><b></b></div>
+ <div class="st s0" style="left:370px"><i class="ic" style="display:block;flex:none;width:92px;height:92px;background:url(assets/icons/1f9e9.svg) center/contain no-repeat;"></i></div><div class="sl sl0" style="left:240px"><small>STEP 1</small><b>Install the app</b></div><div class="st s1" style="left:870px"><i class="ic" style="display:block;flex:none;width:92px;height:92px;background:url(assets/icons/1f511.svg) center/contain no-repeat;"></i></div><div class="sl sl1" style="left:740px"><small>STEP 2</small><b>Add your API key</b></div><div class="st s2" style="left:1370px"><img class=rb src=assets/billie.png alt=Billie></div><div class="sl sl2" style="left:1240px"><small>STEP 3</small><b>Billie gets to work</b></div>
+</div>
+
+</div>
+<script>
+(function(){
+var P='#s11-setup-root', S=55.55;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .tg',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.4,ease:'back.out(2)'},T(55.6));
+tl.to(P+' .knob',{x:190,duration:.35,ease:'power3.inOut'},T(56.05));
+tl.to(P+' .on',{opacity:0,duration:.15},T(56.05));
+tl.to(P+' .off',{opacity:1,duration:.2},T(56.25));
+tl.to(P+' .glow',{x:-150,duration:.35,ease:'power3.inOut'},T(56.05));
+tl.to(P+' .q',{color:'#9AA3AE',duration:.3},T(56.3));
+tl.to(P+' .tg',{opacity:0,y:-60,duration:.3,ease:'power2.in'},T(57.35));
+tl.set(P+' .ln b',{scaleX:0},0);
+tl.fromTo(P+' .ln',{opacity:0},{opacity:1,duration:.3},T(57.5));
+tl.fromTo(P+' .st',{scale:0},{scale:1,duration:.4,stagger:.08,ease:'back.out(2)'},T(57.45));
+tl.fromTo(P+' .sl',{opacity:0,y:20},{opacity:.35,y:0,duration:.3,stagger:.08},T(57.55));
+
+tl.to(P+' .s0',{borderColor:'#2B7BE0',duration:.25},T(57.75));
+tl.to(P+' .s0',{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'},T(57.75));
+tl.to(P+' .sl0',{opacity:1,duration:.25},T(57.75));
+tl.to(P+' .l0 b',{scaleX:1,duration:.5,ease:'power2.inOut'},T(58.39));
+
+tl.to(P+' .s1',{borderColor:'#2B7BE0',duration:.25},T(58.89));
+tl.to(P+' .s1',{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'},T(58.89));
+tl.to(P+' .sl1',{opacity:1,duration:.25},T(58.89));
+tl.to(P+' .l1 b',{scaleX:1,duration:.5,ease:'power2.inOut'},T(59.98));
+
+tl.to(P+' .s2',{borderColor:'#2B7BE0',duration:.25},T(60.48));
+tl.to(P+' .s2',{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'},T(60.48));
+tl.to(P+' .sl2',{opacity:1,duration:.25},T(60.48));
+
+tl.to(P+' .s2',{boxShadow:'0 0 0 22px rgba(43,123,224,.18)',duration:.4},T(60.8));
+tl.to(P+' .steps',{opacity:0,y:-30,duration:.25,ease:'power2.in'},T(61.6));
+
+window.__timelines["s11-setup"]=tl;
+})();
+</script>
+</template></body></html>

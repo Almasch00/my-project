@@ -1,0 +1,77 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s12-cta-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s12-cta-root *{box-sizing:border-box;}
+#s12-cta-root .abs{position:absolute;}
+#s12-cta-root .fill{position:absolute;inset:0;}
+#s12-cta-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s12-cta-root img.ic{display:block;}
+#s12-cta-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s12-cta-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s12-cta-root{background:#12163A;}
+#s12-cta-root .L{position:absolute;font-weight:800;font-size:560px;line-height:1;
+  background:linear-gradient(180deg,#FF8A3D 0%,#E5322D 52%,#7A2E8E 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#s12-cta-root .end{position:absolute;inset:0;background:#DDE7F1;clip-path:circle(0% at 50% 45%);}
+#s12-cta-root .lock{position:absolute;left:0;right:0;top:120px;display:flex;align-items:center;justify-content:center;gap:40px;}
+#s12-cta-root .lock img{width:240px;height:248px;display:block;}
+#s12-cta-root .wm{font-weight:800;font-size:170px;letter-spacing:-4px;line-height:1;background:linear-gradient(180deg,#F7682D 0%,#E5322D 60%,#B5244A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+#s12-cta-root .cta{position:absolute;left:0;right:0;top:450px;display:flex;justify-content:center;gap:20px;font-weight:700;font-size:76px;}
+#s12-cta-root .cta span{display:inline-block;}
+#s12-cta-root .cta .hl{color:#2563EB;}
+#s12-cta-root .mail{position:absolute;left:0;right:0;top:572px;text-align:center;font-family:'Roboto';font-weight:500;font-size:30px;color:#475569;letter-spacing:.5px;}
+#s12-cta-root .bf{position:absolute;left:0;right:0;top:640px;display:flex;justify-content:center;align-items:center;gap:16px;font-weight:500;font-size:26px;color:#6B7487;}
+#s12-cta-root .bf img{height:160px;width:329px;display:block;margin:-30px 0;}
+</style>
+<div id="s12-cta-root" data-composition-id="s12-cta" data-width="1920" data-height="1080">
+
+<div class="L L0" style="left:150px;top:80px">B</div><div class="L L1" style="left:470px;top:260px">i</div><div class="L L2" style="left:640px;top:40px">l</div><div class="L L3" style="left:790px;top:300px">l</div><div class="L L4" style="left:940px;top:120px">i</div><div class="L L5" style="left:1130px;top:230px">e</div>
+<div class="end">
+ <div class="lock"><img src="assets/billie.png" alt="Billie"><div class="wm">Billie</div></div>
+ <div class="cta"><span class="">Book</span><span class="">a</span><span class="hl">20-minute</span><span class="">stock</span><span class="">check</span></div>
+ <div class="mail">info@bayforward.com</div>
+ <div class="bf">by <img src="assets/bayforward.svg" alt="Bay Forward"></div>
+</div>
+
+</div>
+<script>
+(function(){
+var P='#s12-cta-root', S=61.85;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+tl.fromTo(P+' .L0',{y:900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(61.95));
+tl.fromTo(P+' .L1',{y:-900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(62.05));
+tl.fromTo(P+' .L2',{y:900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(62.15));
+tl.fromTo(P+' .L3',{y:-900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(62.25));
+tl.fromTo(P+' .L4',{y:900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(62.35));
+tl.fromTo(P+' .L5',{y:-900,opacity:0},{y:0,opacity:1,duration:.55,ease:'power4.out'},T(62.45));
+
+tl.to(P+' .L',{x:'-=40',duration:2.3,ease:'none'},T(62.2));
+tl.to(P+' .L',{scale:1.25,opacity:0,duration:.35,ease:'power2.in',stagger:.03},T(64.2));
+tl.to(P+' .end',{clipPath:'circle(150% at 50% 45%)',duration:.6,ease:'power3.inOut'},T(64.3));
+tl.fromTo(P+' .lock img',{scale:0,rotation:-15},{scale:1,rotation:0,duration:.6,ease:'back.out(1.8)'},T(64.55));
+tl.fromTo(P+' .wm',{x:-50,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},T(64.6));
+tl.fromTo(P+' .cta span:nth-child(1)',{y:40,opacity:0},{y:0,opacity:1,duration:.35,ease:'back.out(2)'},T(64.68));
+tl.fromTo(P+' .cta span:nth-child(2)',{y:40,opacity:0},{y:0,opacity:1,duration:.35,ease:'back.out(2)'},T(64.92));
+tl.fromTo(P+' .cta span:nth-child(3)',{y:40,opacity:0},{y:0,opacity:1,duration:.35,ease:'back.out(2)'},T(64.98));
+tl.fromTo(P+' .cta span:nth-child(4)',{y:40,opacity:0},{y:0,opacity:1,duration:.35,ease:'back.out(2)'},T(65.62));
+tl.fromTo(P+' .cta span:nth-child(5)',{y:40,opacity:0},{y:0,opacity:1,duration:.35,ease:'back.out(2)'},T(65.94));
+
+tl.fromTo(P+' .mail',{opacity:0,y:14},{opacity:1,y:0,duration:.4},T(66.4));
+tl.fromTo(P+' .bf',{opacity:0,y:14},{opacity:1,y:0,duration:.4},T(66.7));
+tl.to(P+' .lock img',{y:-10,duration:.8,yoyo:true,repeat:1,ease:'sine.inOut'},T(66.9));
+
+window.__timelines["s12-cta"]=tl;
+})();
+</script>
+</template></body></html>

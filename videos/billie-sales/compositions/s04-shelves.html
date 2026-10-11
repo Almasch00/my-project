@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s04-shelves-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s04-shelves-root *{box-sizing:border-box;}
+#s04-shelves-root .abs{position:absolute;}
+#s04-shelves-root .fill{position:absolute;inset:0;}
+#s04-shelves-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s04-shelves-root img.ic{display:block;}
+#s04-shelves-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s04-shelves-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s04-shelves-root .cards{position:absolute;left:0;right:0;top:90px;display:flex;justify-content:center;gap:80px;}
+#s04-shelves-root .pc{position:relative;width:760px;height:680px;background:#fff;border-radius:36px;box-shadow:0 30px 60px rgba(20,27,60,.13);}
+#s04-shelves-root .tag{position:absolute;left:40px;top:34px;display:flex;align-items:center;gap:14px;padding:12px 26px;border-radius:40px;font-weight:700;font-size:34px;}
+#s04-shelves-root .tag.r{background:#FDE7E6;color:#D7261F;}
+#s04-shelves-root .tag.a{background:#FFF1D6;color:#B76E00;}
+#s04-shelves-root .shelf{position:absolute;left:40px;top:120px;width:680px;height:400px;}
+#s04-shelves-root .plank{position:absolute;left:0;width:680px;height:14px;border-radius:7px;background:#CBD3DE;}
+#s04-shelves-root .bx{position:absolute;width:104px;height:104px;}
+#s04-shelves-root .foot{position:absolute;left:40px;right:40px;bottom:26px;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:30px;color:#6B7487;}
+#s04-shelves-root .foot b{font-weight:800;font-size:44px;color:#141B3C;}
+#s04-shelves-root .why{display:flex;align-items:center;gap:10px;}
+#s04-shelves-root .xbig{position:absolute;left:250px;top:110px;width:180px;height:180px;}
+</style>
+<div id="s04-shelves-root" data-composition-id="s04-shelves" data-width="1920" data-height="1080">
+
+<div class="cards">
+ <div class="pc pl"><div class="tag r"><i class="ic" style="display:block;flex:none;width:40px;height:40px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i>Overstocked</div>
+  <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div><div class="bx L0" style="left:70px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L1" style="left:192px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L2" style="left:314px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L3" style="left:436px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L4" style="left:558px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L5" style="left:70px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L6" style="left:192px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L7" style="left:314px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L8" style="left:436px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L9" style="left:558px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L10" style="left:70px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L11" style="left:192px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L12" style="left:314px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L13" style="left:436px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx L14" style="left:558px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div></div>
+  <div class="foot"><span class="why w0"><i class="ic" style="display:block;flex:none;width:40px;height:40px;background:url(assets/icons/1f4c9.svg) center/contain no-repeat;"></i>Doesn't sell</span><span>On hand <b class="cntL">0</b></span></div></div>
+ <div class="pc pr"><div class="tag a"><i class="ic" style="display:block;flex:none;width:36px;height:36px;background:url(assets/icons/274c.svg) center/contain no-repeat;"></i>Out of stock</div>
+  <div class="shelf"><div class="plank" style="top:124px"></div><div class="plank" style="top:254px"></div><div class="plank" style="top:384px"></div><div class="bx R0" style="left:70px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx R1" style="left:192px;top:20px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx R2" style="left:70px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx R3" style="left:192px;top:150px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx R4" style="left:70px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="bx R5" style="left:192px;top:280px"><i class="ic" style="display:block;flex:none;width:104px;height:104px;background:url(assets/icons/1f4e6.svg) center/contain no-repeat;"></i></div><div class="xbig"><i class="ic" style="display:block;flex:none;width:180px;height:180px;background:url(assets/icons/274c.svg) center/contain no-repeat;"></i></div></div>
+  <div class="foot"><span class="why w1"><i class="ic" style="display:block;flex:none;width:40px;height:40px;background:url(assets/icons/1f4c8.svg) center/contain no-repeat;"></i>Sells fast</span><span>On hand <b class="cntR">36</b></span></div></div>
+</div>
+
+</div>
+<script>
+(function(){
+var P='#s04-shelves-root', S=11.6;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .pl',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(11.75));
+tl.set(P+' .pl .bx',{y:-520,opacity:0},0);
+tl.to(P+' .L0',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.36));
+tl.to(P+' .L1',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.42));
+tl.to(P+' .L2',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.48));
+tl.to(P+' .L3',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.54));
+tl.to(P+' .L4',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.60));
+tl.to(P+' .L5',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.66));
+tl.to(P+' .L6',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.72));
+tl.to(P+' .L7',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.78));
+tl.to(P+' .L8',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.84));
+tl.to(P+' .L9',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.90));
+tl.to(P+' .L10',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(12.96));
+tl.to(P+' .L11',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(13.02));
+tl.to(P+' .L12',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(13.08));
+tl.to(P+' .L13',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(13.14));
+tl.to(P+' .L14',{y:0,opacity:1,duration:.38,ease:'bounce.out'},T(13.20));
+
+var cL={v:0};tl.to(cL,{v:860,duration:1.0,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .cntL').textContent=Math.round(cL.v);}},T(12.4));
+tl.fromTo(P+' .w0',{opacity:0,x:-20},{opacity:1,x:0,duration:.3},T(13.89));
+tl.fromTo(P+' .pr',{y:60,opacity:0},{y:0,opacity:1,duration:.5,ease:'power3.out'},T(14.2));
+tl.set(P+' .xbig',{scale:0,opacity:0},0);
+tl.to(P+' .R0',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(14.75));
+tl.to(P+' .R1',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(14.82));
+tl.to(P+' .R2',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(14.89));
+tl.to(P+' .R3',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(14.96));
+tl.to(P+' .R4',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(15.03));
+tl.to(P+' .R5',{y:420,opacity:0,duration:.35,ease:'power2.in'},T(15.10));
+
+var cR={v:36};tl.to(cR,{v:0,duration:.6,ease:'power1.in',onUpdate:function(){document.querySelector(P+' .cntR').textContent=Math.round(cR.v);}},T(14.75));
+tl.to(P+' .xbig',{scale:1,opacity:1,duration:.4,ease:'back.out(2.5)'},T(15.36));
+tl.fromTo(P+' .w1',{opacity:0,x:-20},{opacity:1,x:0,duration:.3},T(15.66));
+tl.to(P+' .cards',{opacity:0,scale:.96,duration:.25,ease:'power2.in'},T(16.3));
+
+window.__timelines["s04-shelves"]=tl;
+})();
+</script>
+</template></body></html>

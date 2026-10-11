@@ -1,0 +1,96 @@
+<!doctype html>
+<html><head><meta charset="UTF-8" /></head><body>
+<template>
+<style>
+@font-face{font-family:'Poppins';font-weight:400;src:url('assets/fonts/poppins-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:500;src:url('assets/fonts/poppins-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:600;src:url('assets/fonts/poppins-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:700;src:url('assets/fonts/poppins-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-weight:800;src:url('assets/fonts/poppins-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:500;src:url('assets/fonts/roboto-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Roboto';font-weight:700;src:url('assets/fonts/roboto-latin-700-normal.woff2') format('woff2');}
+
+#s05-pain-root{position:absolute;inset:0;overflow:hidden;background:#DDE7F1;font-family:'Poppins',sans-serif;color:#141B3C;}
+#s05-pain-root *{box-sizing:border-box;}
+#s05-pain-root .abs{position:absolute;}
+#s05-pain-root .fill{position:absolute;inset:0;}
+#s05-pain-root .center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+#s05-pain-root img.ic{display:block;}
+#s05-pain-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
+#s05-pain-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
+
+#s05-pain-root .cash{position:absolute;left:660px;top:120px;width:600px;height:600px;}
+#s05-pain-root .cash .money{position:absolute;left:150px;top:110px;width:300px;height:300px;}
+#s05-pain-root .cash .ice{position:absolute;left:60px;top:20px;width:480px;height:480px;opacity:0;}
+#s05-pain-root .cash .frost{position:absolute;left:0;top:-40px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(190,230,255,.0) 40%,rgba(190,230,255,.7) 70%,rgba(255,255,255,0) 100%);opacity:0;}
+#s05-pain-root .flake{position:absolute;width:70px;height:70px;}
+#s05-pain-root .cash .t{position:absolute;left:-300px;right:-300px;top:500px;white-space:nowrap;text-align:center;font-weight:700;font-size:54px;}
+#s05-pain-root .cash .t span{color:#2B7BE0;}
+#s05-pain-root .cash .amt{position:absolute;left:-300px;right:-300px;top:584px;white-space:nowrap;text-align:center;font-weight:600;font-size:32px;color:#D7261F;}
+#s05-pain-root .call{position:absolute;left:1060px;top:150px;width:620px;height:500px;border-radius:56px;background:#0D111C;color:#fff;padding:52px 56px;}
+#s05-pain-root .call .in{display:flex;align-items:center;gap:26px;}
+#s05-pain-root .call .av{width:110px;height:110px;border-radius:28px;background:#2E6BF0;display:flex;align-items:center;justify-content:center;}
+#s05-pain-root .call .nm{font-weight:600;font-size:40px;}
+#s05-pain-root .call .sub{font-family:'Roboto';font-weight:500;font-size:28px;color:#9AA4B8;}
+#s05-pain-root .bub{margin-top:56px;display:inline-block;background:#fff;color:#141B3C;border-radius:30px 30px 30px 8px;padding:22px 34px;font-weight:600;font-size:42px;min-height:110px;min-width:460px;}
+#s05-pain-root .bub i{font-style:normal;opacity:0;}
+#s05-pain-root .bell{position:absolute;right:50px;top:50px;width:70px;height:70px;}
+</style>
+<div id="s05-pain-root" data-composition-id="s05-pain" data-width="1920" data-height="1080">
+
+<div class="cash"><div class="frost"></div><div class="ice"><i class="ic" style="display:block;flex:none;width:480px;height:480px;background:url(assets/icons/1f9ca.svg) center/contain no-repeat;"></i></div><div class="money"><i class="ic" style="display:block;flex:none;width:300px;height:300px;background:url(assets/icons/1f4b5.svg) center/contain no-repeat;"></i></div>
+ <div class="flake f0" style="left:40px;top:60px"><i class="ic" style="display:block;flex:none;width:70px;height:70px;background:url(assets/icons/2744.svg) center/contain no-repeat;"></i></div><div class="flake f1" style="left:500px;top:110px"><i class="ic" style="display:block;flex:none;width:56px;height:56px;background:url(assets/icons/2744.svg) center/contain no-repeat;"></i></div><div class="flake f2" style="left:470px;top:400px"><i class="ic" style="display:block;flex:none;width:64px;height:64px;background:url(assets/icons/2744.svg) center/contain no-repeat;"></i></div>
+ <div class="t">Cash <span>frozen</span> on a shelf</div><div class="amt">€<b class="cnt">0</b> tied up in stock</div></div>
+<div class="call"><div class="bell"><i class="ic" style="display:block;flex:none;width:70px;height:70px;background:url(assets/icons/1f514.svg) center/contain no-repeat;"></i></div>
+ <div class="in"><div class="av"><i class="ic" style="display:block;flex:none;width:70px;height:70px;background:url(assets/icons/1f4de.svg) center/contain no-repeat;"></i></div><div><div class="nm">Incoming call</div><div class="sub">Customer · Order #4471</div></div></div>
+ <div class="bub"><i>W</i><i>h</i><i>e</i><i>r</i><i>e</i><i>'</i><i>s</i><i>&nbsp;</i><i>m</i><i>y</i><i>&nbsp;</i><i>o</i><i>r</i><i>d</i><i>e</i><i>r</i><i>?</i></div></div>
+
+</div>
+<script>
+(function(){
+var P='#s05-pain-root', S=16.55;
+function T(g){return Math.max(0, +(g - S).toFixed(3));}
+var tl=gsap.timeline({paused:true});
+
+tl.fromTo(P+' .money',{scale:0,rotation:-20},{scale:1,rotation:0,duration:.5,ease:'back.out(2)'},T(16.65));
+tl.fromTo(P+' .t',{opacity:0,y:20},{opacity:1,y:0,duration:.35},T(17.0));
+tl.to(P+' .frost',{opacity:1,duration:.6},T(17.58));
+tl.fromTo(P+' .ice',{opacity:0,scale:.6},{opacity:.85,scale:1,duration:.5,ease:'back.out(1.5)'},T(17.58));
+tl.to(P+' .money',{filter:'saturate(.25) brightness(1.15) hue-rotate(160deg)',duration:.6},T(17.6));
+tl.fromTo(P+' .flake',{scale:0,opacity:0},{scale:1,opacity:1,duration:.35,stagger:.12,ease:'back.out(2)'},T(17.7));
+var c={v:0};tl.fromTo(P+' .amt',{opacity:0},{opacity:1,duration:.3},T(17.9));
+tl.to(c,{v:48200,duration:1.1,ease:'power2.out',onUpdate:function(){document.querySelector(P+' .cnt').textContent=Math.round(c.v).toLocaleString('en-US');}},T(17.9));
+tl.to(P+' .cash',{x:-480,scale:.78,duration:.6,ease:'power3.inOut'},T(19.25));
+tl.fromTo(P+' .call',{x:500,opacity:0},{x:0,opacity:1,duration:.6,ease:'power3.out'},T(19.4));
+tl.fromTo(P+' .call',{rotation:0},{rotation:2.5,duration:.06,yoyo:true,repeat:9,ease:'none'},T(20.3));
+tl.fromTo(P+' .bell',{rotation:-18},{rotation:18,duration:.08,yoyo:true,repeat:9,ease:'none'},T(20.3));
+tl.set(P+' .bub i:nth-child(1)',{opacity:1},T(20.820));
+tl.set(P+' .bub i:nth-child(2)',{opacity:1},T(20.885));
+tl.set(P+' .bub i:nth-child(3)',{opacity:1},T(20.950));
+tl.set(P+' .bub i:nth-child(4)',{opacity:1},T(21.015));
+tl.set(P+' .bub i:nth-child(5)',{opacity:1},T(21.080));
+tl.set(P+' .bub i:nth-child(6)',{opacity:1},T(21.145));
+tl.set(P+' .bub i:nth-child(7)',{opacity:1},T(21.210));
+tl.set(P+' .bub i:nth-child(8)',{opacity:1},T(21.275));
+tl.set(P+' .bub i:nth-child(9)',{opacity:1},T(21.340));
+tl.set(P+' .bub i:nth-child(10)',{opacity:1},T(21.405));
+tl.set(P+' .bub i:nth-child(11)',{opacity:1},T(21.470));
+tl.set(P+' .bub i:nth-child(12)',{opacity:1},T(21.535));
+tl.set(P+' .bub i:nth-child(13)',{opacity:1},T(21.600));
+tl.set(P+' .bub i:nth-child(14)',{opacity:1},T(21.665));
+tl.set(P+' .bub i:nth-child(15)',{opacity:1},T(21.730));
+tl.set(P+' .bub i:nth-child(16)',{opacity:1},T(21.795));
+tl.set(P+' .bub i:nth-child(17)',{opacity:1},T(21.860));
+
+// Lisa collapse: card squeezes to a bar, then a line
+tl.to(P+' .cash',{opacity:0,duration:.25},T(22.05));
+tl.to(P+' .call > *',{opacity:0,duration:.12},T(22.15));
+tl.to(P+' .call',{x:-490,width:60,paddingLeft:0,paddingRight:0,borderRadius:30,duration:.28,ease:'power3.in'},T(22.2));
+tl.to(P+' .call',{height:4,y:248,width:4,duration:.18,ease:'power2.in'},T(22.48));
+tl.to(P+' .call',{opacity:0,duration:.05},T(22.66));
+
+window.__timelines["s05-pain"]=tl;
+})();
+</script>
+</template></body></html>

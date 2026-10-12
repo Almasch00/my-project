@@ -7,39 +7,10 @@
     <script src="vendor/gsap.min.js"></script>
     <style>
       @font-face {
-        font-family: "Cormorant Garamond";
-        src: url("assets/fonts/cormorant-garamond-latin-300-normal.woff2") format("woff2");
-        font-weight: 300;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "Cormorant Garamond";
-        src: url("assets/fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");
-        font-weight: 400;
-        font-style: normal;
-      }
-      @font-face {
-        font-family: "Cormorant Garamond";
-        src: url("assets/fonts/cormorant-garamond-latin-300-italic.woff2") format("woff2");
-        font-weight: 300;
-        font-style: italic;
-      }
-      @font-face {
-        font-family: "Cormorant Garamond";
-        src: url("assets/fonts/cormorant-garamond-latin-400-italic.woff2") format("woff2");
-        font-weight: 400;
-        font-style: italic;
-      }
-      @font-face {
         font-family: "Jost";
-        src: url("assets/fonts/jost-latin-300-normal.woff2") format("woff2");
-        font-weight: 300;
+        src: url("assets/fonts/jost-latin-400-normal.woff2") format("woff2");
+        font-weight: 400;
         font-style: normal;
-      }
-      :root {
-        --ivory: #f3ebdd;
-        --gold: #c9a96e;
-        --ink: #0d0b09;
       }
       * {
         margin: 0;
@@ -51,23 +22,19 @@
         width: 1080px;
         height: 1920px;
         overflow: hidden;
-        background: var(--ink);
+        background: #f2f1ee;
       }
       #root {
         position: relative;
         width: 100%;
         height: 100%;
         overflow: hidden;
-        background: var(--ink);
-        color: var(--ivory);
+        background: #f2f1ee;
       }
-
-      /* ---------- footage ---------- */
       .shot {
         position: absolute;
         inset: 0;
         overflow: hidden;
-        opacity: 0;
       }
       .shot .inner {
         position: absolute;
@@ -81,321 +48,128 @@
         height: 1920px;
         object-fit: cover;
       }
-
-      /* ---------- finish: scrims, vignette, light bloom ---------- */
-      .scrim {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background:
-          linear-gradient(180deg, rgba(13, 11, 9, 0.55) 0%, rgba(13, 11, 9, 0) 18%),
-          linear-gradient(0deg, rgba(13, 11, 9, 0.78) 0%, rgba(13, 11, 9, 0.35) 30%, rgba(13, 11, 9, 0) 48%);
-      }
-      .vignette {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: radial-gradient(ellipse 75% 60% at 50% 45%, rgba(0, 0, 0, 0) 55%, rgba(8, 6, 4, 0.55) 100%);
-      }
-      .bloom {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        mix-blend-mode: screen;
-        opacity: 0;
-        background:
-          radial-gradient(ellipse 60% 45% at 78% 22%, rgba(255, 214, 160, 0.85) 0%, rgba(255, 190, 120, 0.25) 45%, rgba(0, 0, 0, 0) 75%),
-          radial-gradient(ellipse 50% 40% at 15% 85%, rgba(255, 200, 150, 0.35) 0%, rgba(0, 0, 0, 0) 70%);
-      }
-
-      /* ---------- type ---------- */
-      .caption {
-        position: absolute;
-        left: 90px;
-        right: 90px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 22px;
-        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
-      }
-      .label {
-        font-family: "Jost", sans-serif;
-        font-weight: 300;
-        font-size: 28px;
-        letter-spacing: 0.42em;
-        text-transform: uppercase;
-        color: var(--ivory);
-        opacity: 0;
-      }
-      .line {
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 300;
-        font-style: italic;
-        font-size: 96px;
-        line-height: 1.05;
-        color: var(--ivory);
-        opacity: 0;
-      }
-      .rule {
-        width: 140px;
-        height: 1px;
-        background: var(--gold);
-        transform-origin: 50% 50%;
-      }
-      .name {
-        font-family: "Cormorant Garamond", serif;
-        font-weight: 400;
-        font-size: 44px;
-        line-height: 1;
-        white-space: nowrap;
-        color: var(--ivory);
-        opacity: 0;
-      }
-      .name-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--gold);
-        opacity: 0;
-      }
-
-      /* ---------- end card ---------- */
       #endcard {
         position: absolute;
         inset: 0;
+        background: #f2f1ee;
         opacity: 0;
-        background: radial-gradient(ellipse 80% 55% at 50% 46%, #241c14 0%, #120e0a 55%, #080605 100%);
       }
       #end-stack {
         position: absolute;
         left: 0;
         right: 0;
-        top: 700px;
+        top: 800px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 44px;
+        gap: 40px;
       }
       #end-logo {
-        width: 620px;
+        width: 560px;
         height: auto;
         display: block;
-        opacity: 0;
-      }
-      #end-rule {
-        width: 180px;
-        height: 1px;
-        background: var(--gold);
       }
       #end-label {
         font-family: "Jost", sans-serif;
-        font-weight: 300;
-        font-size: 30px;
+        font-weight: 400;
+        font-size: 26px;
         letter-spacing: 0.5em;
         text-transform: uppercase;
-        color: var(--ivory);
-        opacity: 0;
-      }
-      #end-sub {
-        font-family: "Cormorant Garamond", serif;
-        font-style: italic;
-        font-weight: 300;
-        font-size: 54px;
-        color: var(--gold);
-        opacity: 0;
-      }
-      #fade-black {
-        position: absolute;
-        inset: 0;
-        background: #000;
-        opacity: 0;
-        pointer-events: none;
+        color: #1a1a1a;
       }
     </style>
   </head>
   <body>
-    <!-- 72 BPM score: one bar = 3.333s. Cuts sit on bar lines with 0.6s dissolves. -->
+    <!-- Cut to a 110 BPM groove (beat = 0.5455s): 11 hard cuts on the beat, logo on bar 8. -->
     <div
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="24"
+      data-duration="18"
       data-width="1080"
       data-height="1920"
     >
-      <!-- 1 · lilies (bar 1) -->
-      <div class="shot" id="s1">
-        <div class="inner" data-layout-allow-overflow>
-          <video id="v1" src="footage/img_1179.mp4" data-start="0" data-duration="3.633" data-media-start="0.2" data-playback-rate="0.9" data-track-index="0" muted playsinline></video>
-        </div>
-      </div>
-      <!-- 2 · warm light play, top-down (bar 2) -->
-      <div class="shot" id="s2">
-        <div class="inner" data-layout-allow-overflow>
-          <video id="v2" src="footage/img_1205.mp4" data-start="3.033" data-duration="3.6" data-media-start="0.6" data-playback-rate="0.85" data-track-index="1" muted playsinline></video>
-        </div>
-      </div>
-      <!-- 3 · hard shadows (bar 3) -->
-      <div class="shot" id="s3">
-        <div class="inner" data-layout-allow-overflow>
-          <video id="v3" src="footage/img_1176.mp4" data-start="6.367" data-duration="3.966" data-media-start="0" data-playback-rate="0.8" data-track-index="0" muted playsinline></video>
-        </div>
-      </div>
-      <!-- 4 · In Her Garden + croc bag (bar 4) -->
-      <div class="shot" id="s4">
-        <div class="inner" data-layout-allow-overflow>
-          <video id="v4" src="footage/img_1208.mp4" data-start="9.7" data-duration="3.933" data-media-start="0.1" data-playback-rate="0.85" data-track-index="1" muted playsinline></video>
-        </div>
-      </div>
-      <!-- 5 · unboxing, slow motion (bars 5–6.5) -->
-      <div class="shot" id="s5">
-        <div class="inner" data-layout-allow-overflow>
-          <video id="v5" src="footage/img_1209.mp4" data-start="13.033" data-duration="5.867" data-media-start="0" data-playback-rate="0.8" data-track-index="0" muted playsinline></video>
-        </div>
-      </div>
+      <!-- start / duration / media-start in seconds; see SHOTS in the script for beat counts -->
+      <div class="shot" id="s1"><div class="inner" data-layout-allow-overflow>
+        <video id="v1" src="footage/img_1176.mp4" data-start="0" data-duration="1.636" data-media-start="0.2" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s2"><div class="inner" data-layout-allow-overflow>
+        <video id="v2" src="footage/img_1176.mp4" data-start="1.636" data-duration="1.091" data-media-start="1.9" data-track-index="1" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s3"><div class="inner" data-layout-allow-overflow>
+        <video id="v3" src="footage/img_1209.mp4" data-start="2.727" data-duration="1.091" data-media-start="0" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s4"><div class="inner" data-layout-allow-overflow>
+        <video id="v4" src="footage/img_1209.mp4" data-start="3.818" data-duration="1.636" data-media-start="1.6" data-track-index="1" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s5"><div class="inner" data-layout-allow-overflow>
+        <video id="v5" src="footage/img_1208.mp4" data-start="5.455" data-duration="1.636" data-media-start="0.3" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s6"><div class="inner" data-layout-allow-overflow>
+        <video id="v6" src="footage/img_1208.mp4" data-start="7.091" data-duration="1.091" data-media-start="1.9" data-track-index="1" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s7"><div class="inner" data-layout-allow-overflow>
+        <video id="v7" src="footage/img_1179.mp4" data-start="8.182" data-duration="1.636" data-media-start="0.3" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s8"><div class="inner" data-layout-allow-overflow>
+        <video id="v8" src="footage/img_1179.mp4" data-start="9.818" data-duration="1.091" data-media-start="2.2" data-track-index="1" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s9"><div class="inner" data-layout-allow-overflow>
+        <video id="v9" src="footage/img_1205.mp4" data-start="10.909" data-duration="1.636" data-media-start="1.8" data-track-index="0" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s10"><div class="inner" data-layout-allow-overflow>
+        <video id="v10" src="footage/img_1205.mp4" data-start="12.545" data-duration="1.091" data-media-start="3.3" data-track-index="1" muted playsinline></video>
+      </div></div>
+      <div class="shot" id="s11"><div class="inner" data-layout-allow-overflow>
+        <video id="v11" src="footage/img_1176.mp4" data-start="13.636" data-duration="1.636" data-media-start="1.4" data-track-index="0" muted playsinline></video>
+      </div></div>
 
-      <div class="scrim"></div>
-      <div class="vignette"></div>
-      <div class="bloom" id="bloom"></div>
-
-      <!-- captions -->
-      <div class="caption" id="cap1" style="top: 1330px">
-        <div class="label" id="cap1-label">The Discovery Set</div>
-        <div class="rule" id="cap1-rule"></div>
-        <div class="line" id="cap1-line">Find your signature.</div>
-      </div>
-
-      <div class="caption" id="cap2" style="top: 165px; flex-direction: row; justify-content: center; gap: 22px">
-        <div class="name" id="n1">Alter Ego</div>
-        <div class="name-dot" id="d1"></div>
-        <div class="name" id="n2">Parallel Flora</div>
-        <div class="name-dot" id="d2"></div>
-        <div class="name" id="n3">In Her Garden</div>
-      </div>
-
-      <div class="caption" id="cap4" style="top: 1420px">
-        <div class="line" id="cap4-line">Made to travel with you.</div>
-      </div>
-
-      <div class="caption" id="cap5" style="top: 1430px">
-        <div class="label" id="cap5-label">Five scents</div>
-        <div class="line" id="cap5-line">One ritual.</div>
-      </div>
-
-      <!-- end card -->
       <div id="endcard">
-        <div class="vignette"></div>
         <div id="end-stack">
-          <img id="end-logo" src="assets/uvare-logo-ivory.png" alt="Uvaré" />
-          <div id="end-rule"></div>
+          <img id="end-logo" src="assets/uvare-logo-original.png" alt="Uvaré" />
           <div id="end-label">The Discovery Set</div>
-          <div id="end-sub">Tester Collection</div>
         </div>
       </div>
 
-      <!-- film grain (registry: grain-overlay) -->
-      <div id="grain-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 100; mix-blend-mode: overlay">
-        <div class="grain-texture"></div>
-      </div>
-
-      <div id="fade-black"></div>
-
-      <audio id="music" src="assets/music.wav" data-start="0" data-duration="24" data-track-index="3" data-volume="0.85"></audio>
+      <audio id="music" src="assets/music.wav" data-start="0" data-duration="18" data-track-index="3" data-volume="0.9"></audio>
     </div>
 
-    <style>
-      @keyframes hf-grain-noise {
-        0%, 100% { transform: translate(0, 0); }
-        10% { transform: translate(-5%, -5%); }
-        20% { transform: translate(-10%, 5%); }
-        30% { transform: translate(5%, -10%); }
-        40% { transform: translate(-5%, 15%); }
-        50% { transform: translate(-10%, 5%); }
-        60% { transform: translate(15%, 0); }
-        70% { transform: translate(0, 10%); }
-        80% { transform: translate(-15%, 0); }
-        90% { transform: translate(10%, 5%); }
-      }
-      #grain-overlay .grain-texture {
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        opacity: 0.12;
-        animation: hf-grain-noise 0.5s steps(1) 48;
-      }
-    </style>
-
     <script>
-      const BAR = 60 / 72 * 4; // 3.333s
-      const XF = 0.6; // dissolve length
+      const BEAT = 60 / 110;
       const tl = gsap.timeline({ paused: true });
 
-      // ---- shots: dissolves centred on the bar lines, slow camera drift on each ----
-      const cuts = [0, BAR, 2 * BAR, 3 * BAR, 4 * BAR];
-      const shots = ["#s1", "#s2", "#s3", "#s4", "#s5"];
-      tl.fromTo("#s1", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power1.inOut" }, 0);
-      for (let i = 1; i < shots.length; i++) {
-        const t = cuts[i] - XF / 2;
-        tl.fromTo(shots[i], { opacity: 0 }, { opacity: 1, duration: XF, ease: "sine.inOut" }, t);
-        tl.to(shots[i - 1], { opacity: 0, duration: XF, ease: "sine.inOut" }, t);
-        // warm light bloom washing across each dissolve
-        tl.fromTo("#bloom", { opacity: 0 }, { opacity: 0.38, duration: XF * 0.6, ease: "sine.out" }, t - 0.1);
-        tl.to("#bloom", { opacity: 0, duration: XF * 0.9, ease: "sine.in" }, t + XF * 0.5);
+      // Framing per shot: close punch-ins and slight tilts like the reference's handheld close-ups.
+      // origin = focus point, s0 -> s1 = slow drift in scale, r = tilt (deg).
+      const SHOTS = [
+        { id: "#s1", beats: 3, origin: "50% 45%", s0: 1.0, s1: 1.06, r: 0 },
+        { id: "#s2", beats: 2, origin: "100% 40%", s0: 1.85, s1: 1.95, r: 0 },
+        { id: "#s3", beats: 2, origin: "62% 52%", s0: 1.12, s1: 1.2, r: 0 },
+        { id: "#s4", beats: 3, origin: "50% 52%", s0: 1.0, s1: 1.08, r: 0 },
+        { id: "#s5", beats: 3, origin: "48% 40%", s0: 1.05, s1: 1.12, r: 0 },
+        { id: "#s6", beats: 2, origin: "48% 34%", s0: 1.85, s1: 1.95, r: 6 },
+        { id: "#s7", beats: 3, origin: "50% 55%", s0: 1.0, s1: 1.07, r: 0 },
+        { id: "#s8", beats: 2, origin: "50% 62%", s0: 1.9, s1: 2.0, r: -5 },
+        { id: "#s9", beats: 3, origin: "50% 50%", s0: 1.03, s1: 1.1, r: 0 },
+        { id: "#s10", beats: 2, origin: "44% 70%", s0: 2.0, s1: 2.1, r: 8 },
+        { id: "#s11", beats: 3, origin: "50% 45%", s0: 1.3, s1: 1.36, r: -8 },
+      ];
+      let t = 0;
+      for (const s of SHOTS) {
+        const d = s.beats * BEAT;
+        tl.fromTo(
+          s.id + " .inner",
+          { scale: s.s0, rotation: s.r, xPercent: s.x || 0, transformOrigin: s.origin },
+          { scale: s.s1, rotation: s.r, xPercent: s.x || 0, transformOrigin: s.origin, duration: d, ease: "none" },
+          t,
+        );
+        t += d;
       }
 
-      // camera moves (inner wrappers only)
-      tl.fromTo("#s1 .inner", { scale: 1.16, yPercent: 2 }, { scale: 1.05, yPercent: 0, duration: 3.7, ease: "none" }, 0);
-      tl.fromTo("#s2 .inner", { scale: 1.05, rotation: -1.2 }, { scale: 1.14, rotation: 0, duration: 3.7, ease: "none" }, 3.0);
-      tl.fromTo("#s3 .inner", { scale: 1.12, xPercent: 2 }, { scale: 1.04, xPercent: -1, duration: 4.0, ease: "none" }, 6.35);
-      tl.fromTo("#s4 .inner", { scale: 1.04, yPercent: 0 }, { scale: 1.12, yPercent: -2, duration: 4.0, ease: "none" }, 9.7);
-      tl.fromTo("#s5 .inner", { scale: 1.1 }, { scale: 1.0, duration: 5.9, ease: "power1.out" }, 13.0);
-
-      // ---- captions: soft focus-pull reveals ----
-      function reveal(sel, at, dur = 1.0) {
-        tl.fromTo(sel, { opacity: 0, y: 26, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: dur, ease: "power2.out" }, at);
-      }
-      function vanish(sel, at, dur = 0.5) {
-        tl.to(sel, { opacity: 0, y: -10, filter: "blur(6px)", duration: dur, ease: "power2.in" }, at);
-      }
-
-      // 1 · lilies
-      reveal("#cap1-label", 0.6, 0.9);
-      tl.fromTo("#cap1-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.inOut" }, 0.8);
-      reveal("#cap1-line", 1.05, 1.1);
-      vanish(["#cap1-label", "#cap1-line"], 2.75);
-      tl.to("#cap1-rule", { scaleX: 0, duration: 0.5, ease: "power2.in" }, 2.75);
-
-      // 2 · the three scents, one per beat
-      const beat = BAR / 4;
-      reveal("#n1", 3.6, 0.8);
-      tl.fromTo("#d1", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 3.6 + beat * 0.8);
-      reveal("#n2", 3.6 + beat, 0.8);
-      tl.fromTo("#d2", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 3.6 + beat * 1.8);
-      reveal("#n3", 3.6 + beat * 2, 0.8);
-      vanish(["#n1", "#n2", "#n3", "#d1", "#d2"], 6.05);
-
-      // 4 · bag
-      reveal("#cap4-line", 10.4, 1.1);
-      vanish("#cap4-line", 12.75);
-
-      // 5 · unboxing — words land once the box is open
-      reveal("#cap5-label", 15.6, 0.9);
-      reveal("#cap5-line", 15.9, 1.1);
-      vanish(["#cap5-label", "#cap5-line"], 17.55, 0.6);
-
-      // ---- end card: dip into warm dark, logo lands on the final chord (bar 7 = 20.0s) ----
-      tl.to("#s5", { opacity: 0, duration: 0.9, ease: "sine.inOut" }, 18.0);
-      tl.fromTo("#endcard", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "sine.inOut" }, 18.0);
-      tl.fromTo("#end-logo", { opacity: 0, scale: 1.06, filter: "blur(14px)" }, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.6, ease: "power2.out" }, 19.4);
-      tl.fromTo("#end-rule", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, 20.4);
-      tl.fromTo("#end-label", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 1.4, ease: "power2.out" }, 20.6);
-      reveal("#end-sub", 21.1, 1.2);
-      tl.fromTo("#fade-black", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.in" }, 23.0);
+      // End card on bar 8 (15.27s): drums drop, logo on clean white.
+      const END = 28 * BEAT;
+      tl.fromTo("#endcard", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, END);
+      tl.fromTo("#end-logo", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, END + 0.1);
+      tl.fromTo("#end-label", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, END + 0.5);
 
       window.__timelines["main"] = tl;
     </script>

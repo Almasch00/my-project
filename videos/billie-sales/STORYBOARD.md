@@ -83,7 +83,7 @@ style_reference: Lisa (v.1.1) sales video
 - duration: 6.3s
 - status: animated
 - voiceover: "No implementation project. Install the app, add your API key, and Billie gets to work."
-- motion: Lisa on/off toggle flips to Off; 3-step horizontal timeline fills
+- motion: Lisa rolling carousel "Implementation › 12 weeks → 4 weeks → 1 day → Today ✓" with a calendar grid collapsing to one "Go-live ✓" day; 3-step horizontal timeline fills
 
 ## Frame 12 — CTA
 - src: compositions/s12-cta.html

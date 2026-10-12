@@ -540,14 +540,18 @@ tl.to([P+' .top',P+' .tbl',P+' .bot',P+' .cnt'],{opacity:0,y:-30,duration:.25,ea
 steps = [("1f9e9", "Install the app", 57.75), ("1f511", "Add your API key", 58.89), (None, "Billie gets to work", 60.48)]
 SX = [460, 960, 1460]
 scene("s11-setup", 55.55, 61.85, f"""
-#__RID__ .tg{{position:absolute;left:0;right:0;top:170px;display:flex;flex-direction:column;align-items:center;gap:48px;}}
-#__RID__ .tg .q{{font-weight:600;font-size:64px;}}
-#__RID__ .sw{{position:relative;width:340px;height:150px;}}
-#__RID__ .sw .glow{{position:absolute;left:150px;top:-10px;width:170px;height:170px;border-radius:50%;background:radial-gradient(closest-side,rgba(229,50,45,.45),rgba(229,50,45,0));}}
-#__RID__ .sw .pillb{{position:absolute;inset:0;border-radius:75px;background:#F6F7F9;box-shadow:0 14px 30px rgba(20,27,60,.12);}}
-#__RID__ .sw .knob{{position:absolute;left:18px;top:18px;width:114px;height:114px;border-radius:50%;background:#1F1F23;}}
-#__RID__ .sw .on{{position:absolute;left:180px;top:0;height:150px;line-height:150px;font-weight:600;font-size:44px;}}
-#__RID__ .sw .off{{position:absolute;left:50px;top:0;height:150px;line-height:150px;font-weight:600;font-size:44px;opacity:0;}}
+#__RID__ .cal{{position:absolute;left:0;right:0;top:150px;height:150px;display:flex;justify-content:center;align-items:center;gap:26px;}}
+#__RID__ .cal .k{{display:flex;align-items:center;gap:18px;font-weight:600;font-size:62px;white-space:nowrap;}}
+#__RID__ .cal .k em{{font-style:normal;color:#2563EB;}}
+#__RID__ .cal .win{{position:relative;width:440px;height:150px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);}}
+#__RID__ .cal .reel{{position:absolute;left:0;top:0;width:100%;}}
+#__RID__ .cal .reel div{{height:150px;line-height:150px;font-weight:700;font-size:76px;color:#5B7BD5;white-space:nowrap;}}
+#__RID__ .cal .reel div.last{{color:#16A34A;}}
+#__RID__ .grid{{position:absolute;left:{960 - 404}px;top:350px;width:808px;height:218px;}}
+#__RID__ .day{{position:absolute;width:100px;height:100px;border-radius:22px;background:#2B7BE0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:34px;box-shadow:0 10px 22px rgba(43,123,224,.25);}}
+#__RID__ .day span{{display:block;}}
+#__RID__ .day0 b{{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:40px;opacity:0;white-space:nowrap;}}
 #__RID__ .steps{{position:absolute;left:0;top:0;width:1920px;height:1080px;}}
 #__RID__ .ln{{position:absolute;top:{390 - 5}px;height:10px;background:#C9D0D9;border-radius:5px;}}
 #__RID__ .ln b{{display:block;width:100%;height:100%;background:#2B7BE0;border-radius:5px;transform-origin:0 50%;}}
@@ -557,21 +561,30 @@ scene("s11-setup", 55.55, 61.85, f"""
 #__RID__ .sl small{{display:block;font-weight:600;font-size:26px;letter-spacing:4px;color:#2B7BE0;}}
 #__RID__ .sl b{{display:block;font-weight:700;font-size:44px;}}
 """, f"""
-<div class="tg"><div class="q">Implementation project</div>
- <div class="sw"><div class="glow"></div><div class="pillb"></div><div class="on">On</div><div class="off">Off</div><div class="knob"></div></div></div>
+<div class="cal"><div class="k">{icon('1f4c5', 64)}<span>Implementation<em> ›</em></span></div>
+ <div class="win"><div class="reel"><div>12 weeks</div><div>4 weeks</div><div>1 day</div><div class="last">Today ✓</div></div></div></div>
+<div class="grid">{''.join(f'<div class="day day{i}" style="left:{(i % 7) * 118}px;top:{(i // 7) * 118}px"><span>{i + 1}</span>{"<b>Go-live ✓</b>" if i == 0 else ""}</div>' for i in range(14))}</div>
 <div class="steps">
  <div class="ln l0" style="left:{SX[0] + 90}px;width:{SX[1] - SX[0] - 180}px"><b></b></div>
  <div class="ln l1" style="left:{SX[1] + 90}px;width:{SX[2] - SX[1] - 180}px"><b></b></div>
  {''.join(f'<div class="st s{i}" style="left:{x - 90}px">{icon(c, 92) if c else "<img class=rb src=assets/billie.png alt=Billie>"}</div><div class="sl sl{i}" style="left:{x - 220}px"><small>STEP {i + 1}</small><b>{t}</b></div>' for i, ((c, t, _), x) in enumerate(zip(steps, SX)))}
 </div>
 """, """
-tl.fromTo(P+' .tg',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.4,ease:'back.out(2)'},T(55.6));
-tl.to(P+' .knob',{x:190,duration:.35,ease:'power3.inOut'},T(56.05));
-tl.to(P+' .on',{opacity:0,duration:.15},T(56.05));
-tl.to(P+' .off',{opacity:1,duration:.2},T(56.25));
-tl.to(P+' .glow',{x:-150,duration:.35,ease:'power3.inOut'},T(56.05));
-tl.to(P+' .q',{color:'#9AA3AE',duration:.3},T(56.3));
-tl.to(P+' .tg',{opacity:0,y:-60,duration:.3,ease:'power2.in'},T(57.35));
+tl.fromTo(P+' .cal',{opacity:0,y:30,filter:'blur(8px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.35,ease:'power3.out'},T(55.6));
+tl.fromTo(P+' .day',{scale:0,opacity:0},{scale:1,opacity:1,duration:.25,stagger:.018,ease:'back.out(2)'},T(55.62));
+// Lisa rolling carousel: 12 weeks -> 4 weeks -> 1 day -> Today
+[56.0,56.35,56.7].forEach(function(t,i){
+  tl.to(P+' .reel',{y:-150*(i+1),filter:'blur(6px)',duration:.16,ease:'power2.in'},T(t)-.16);
+  tl.to(P+' .reel',{filter:'blur(0px)',duration:.22,ease:'back.out(1.6)'},T(t));
+});
+// calendar collapses with the carousel: 14 days -> 6 -> 1 -> Today
+tl.to([13,12,11,10,9,8,7,6].map(function(i){return P+' .day'+i;}),{scale:0,opacity:0,duration:.18,stagger:.015,ease:'power2.in'},T(55.88));
+tl.to([5,4,3,2,1].map(function(i){return P+' .day'+i;}),{scale:0,opacity:0,duration:.18,stagger:.02,ease:'power2.in'},T(56.22));
+tl.to(P+' .day0',{x:264,y:59,width:280,borderRadius:30,backgroundColor:'#16A34A',duration:.35,ease:'power3.inOut'},T(56.55));
+tl.to(P+' .day0 span',{opacity:0,duration:.15},T(56.55));
+tl.to(P+' .day0 b',{opacity:1,duration:.2},T(56.75));
+tl.fromTo(P+' .day0',{scale:1},{scale:1.12,duration:.15,yoyo:true,repeat:1,ease:'power2.out',immediateRender:false},T(56.9));
+tl.to([P+' .cal',P+' .grid'],{opacity:0,y:-50,duration:.2,ease:'power2.in'},T(57.22));
 tl.set(P+' .ln b',{scaleX:0},0);
 tl.fromTo(P+' .ln',{opacity:0},{opacity:1,duration:.3},T(57.5));
 tl.fromTo(P+' .st',{scale:0},{scale:1,duration:.4,stagger:.08,ease:'back.out(2)'},T(57.45));

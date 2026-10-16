@@ -34,7 +34,7 @@ About 1 minute, driven by the supplied voiceover.
 - Text transitions/animations styled like Lisa: rolling blurred word carousel, card collapse-to-line, curved ribbon swoosh ("Meet / Billie"), toggle, blue split-screen pill list, "runs on Odoo" reveal, gradient big-letter logo close.
 - Subtle SFX on transitions; music bed = user's "Micrah - The Event", low and carved under the VO (synthesized bed removed).
 - Footage from free sources: Unsplash/Pexels/Pixabay are blocked in this environment, so CC BY 4.0 clips from Intel sample-videos are used (hook background only; overstock scene keeps its motion graphics per user).
-- End CTA: "Book a 20-minute stock check" with info@bayforward.com in small text.
+- End CTA: "Book a 20-minute stock check" with info@bayforward.be in small text.
 
 ## Notes
 

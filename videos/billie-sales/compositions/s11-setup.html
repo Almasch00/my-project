@@ -19,18 +19,18 @@
 #s11-setup-root .cursor{position:absolute;left:0;top:0;width:54px;height:54px;}
 #s11-setup-root .ripple{position:absolute;width:90px;height:90px;border-radius:50%;border:4px solid #2563EB;opacity:0;}
 
-#s11-setup-root .cal{position:absolute;left:0;right:0;top:150px;height:150px;display:flex;justify-content:center;align-items:center;gap:26px;}
-#s11-setup-root .cal .k{display:flex;align-items:center;gap:18px;font-weight:600;font-size:62px;white-space:nowrap;}
-#s11-setup-root .cal .k em{font-style:normal;color:#2563EB;}
-#s11-setup-root .cal .win{position:relative;width:440px;height:150px;overflow:hidden;
-  -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 28%,#000 72%,transparent 100%);}
-#s11-setup-root .cal .reel{position:absolute;left:0;top:0;width:100%;}
-#s11-setup-root .cal .reel div{height:150px;line-height:150px;font-weight:700;font-size:76px;color:#5B7BD5;white-space:nowrap;}
-#s11-setup-root .cal .reel div.last{color:#16A34A;}
-#s11-setup-root .grid{position:absolute;left:556px;top:350px;width:808px;height:218px;}
-#s11-setup-root .day{position:absolute;width:100px;height:100px;border-radius:22px;background:#2B7BE0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:34px;box-shadow:0 10px 22px rgba(43,123,224,.25);}
-#s11-setup-root .day span{display:block;}
-#s11-setup-root .day0 b{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:40px;opacity:0;white-space:nowrap;}
+#s11-setup-root .mcal{position:absolute;left:230px;top:96px;width:820px;height:620px;background:#fff;border-radius:34px;box-shadow:0 30px 60px rgba(20,27,60,.13);padding:34px 42px;}
+#s11-setup-root .mh{display:flex;align-items:center;gap:16px;font-weight:700;font-size:40px;}
+#s11-setup-root .mh .chip{margin-left:auto;background:#FDE7E6;color:#D7261F;border-radius:30px;padding:8px 20px;font-weight:600;font-size:24px;}
+#s11-setup-root .wd{display:grid;grid-template-columns:repeat(7,100px);gap:6px;margin-top:22px;font-weight:600;font-size:22px;color:#8A94A6;text-align:center;}
+#s11-setup-root .mg{position:relative;display:grid;grid-template-columns:repeat(7,100px);grid-auto-rows:76px;gap:6px;margin-top:10px;}
+#s11-setup-root .dc{border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:28px;color:#141B3C;background:#F3F6FA;}
+#s11-setup-root .dc.im{background:#FBD5D3;color:#B4231D;}
+#s11-setup-root .dc.bl{background:transparent;}
+#s11-setup-root svg.x{position:absolute;left:0;top:0;width:736px;height:404px;overflow:visible;}
+#s11-setup-root .wr{position:absolute;left:1140px;top:250px;width:640px;}
+#s11-setup-root .wr .l1{font-weight:600;font-size:62px;line-height:1.1;}
+#s11-setup-root .wr .l2{font-weight:800;font-size:132px;line-height:1.05;color:#16A34A;white-space:nowrap;}
 #s11-setup-root .steps{position:absolute;left:0;top:0;width:1920px;height:1080px;}
 #s11-setup-root .ln{position:absolute;top:385px;height:10px;background:#C9D0D9;border-radius:5px;}
 #s11-setup-root .ln b{display:block;width:100%;height:100%;background:#2B7BE0;border-radius:5px;transform-origin:0 50%;}
@@ -42,9 +42,11 @@
 </style>
 <div id="s11-setup-root" data-composition-id="s11-setup" data-width="1920" data-height="1080">
 
-<div class="cal"><div class="k"><i class="ic" style="display:block;flex:none;width:64px;height:64px;background:url(assets/icons/1f4c5.svg) center/contain no-repeat;"></i><span>Implementation<em> ›</em></span></div>
- <div class="win"><div class="reel"><div>12 weeks</div><div>4 weeks</div><div>1 day</div><div class="last">Today ✓</div></div></div></div>
-<div class="grid"><div class="day day0" style="left:0px;top:0px"><span>1</span><b>Go-live ✓</b></div><div class="day day1" style="left:118px;top:0px"><span>2</span></div><div class="day day2" style="left:236px;top:0px"><span>3</span></div><div class="day day3" style="left:354px;top:0px"><span>4</span></div><div class="day day4" style="left:472px;top:0px"><span>5</span></div><div class="day day5" style="left:590px;top:0px"><span>6</span></div><div class="day day6" style="left:708px;top:0px"><span>7</span></div><div class="day day7" style="left:0px;top:118px"><span>8</span></div><div class="day day8" style="left:118px;top:118px"><span>9</span></div><div class="day day9" style="left:236px;top:118px"><span>10</span></div><div class="day day10" style="left:354px;top:118px"><span>11</span></div><div class="day day11" style="left:472px;top:118px"><span>12</span></div><div class="day day12" style="left:590px;top:118px"><span>13</span></div><div class="day day13" style="left:708px;top:118px"><span>14</span></div></div>
+<div class="mcal"><div class="mh"><i class="ic" style="display:block;flex:none;width:46px;height:46px;background:url(assets/icons/1f4c5.svg) center/contain no-repeat;"></i><span>October</span><span class="chip">Implementation: 12 weeks</span></div>
+ <div class="wd"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+ <div class="mg"><div class="dc bl"></div><div class="dc bl"></div><div class="dc bl"></div><div class="dc d1">1</div><div class="dc d2">2</div><div class="dc d3">3</div><div class="dc d4">4</div><div class="dc d5 im">5</div><div class="dc d6 im">6</div><div class="dc d7 im">7</div><div class="dc d8 im">8</div><div class="dc d9 im">9</div><div class="dc d10">10</div><div class="dc d11">11</div><div class="dc d12 im">12</div><div class="dc d13 im">13</div><div class="dc d14 im">14</div><div class="dc d15 im">15</div><div class="dc d16 im">16</div><div class="dc d17">17</div><div class="dc d18">18</div><div class="dc d19 im">19</div><div class="dc d20 im">20</div><div class="dc d21 im">21</div><div class="dc d22 im">22</div><div class="dc d23 im">23</div><div class="dc d24">24</div><div class="dc d25">25</div><div class="dc d26 im">26</div><div class="dc d27 im">27</div><div class="dc d28 im">28</div><div class="dc d29 im">29</div><div class="dc d30 im">30</div><div class="dc d31">31</div>
+  <svg class="x" viewBox="0 0 736 404"><line class="x1" x1="24" y1="24" x2="712" y2="380" stroke="#E5322D" stroke-width="18" stroke-linecap="round" stroke-dasharray="776" stroke-dashoffset="776"/><line class="x2" x1="712" y1="24" x2="24" y2="380" stroke="#E5322D" stroke-width="18" stroke-linecap="round" stroke-dasharray="776" stroke-dashoffset="776"/><circle class="ring" cx="477" cy="202" r="50" fill="none" stroke="#16A34A" stroke-width="9" stroke-dasharray="315" stroke-dashoffset="315" transform="rotate(-90 477 202)"/></svg></div></div>
+<div class="wr"><div class="l1">Implementation:</div><div class="l2">Today ✓</div></div>
 <div class="steps">
  <div class="ln l0" style="left:550px;width:320px"><b></b></div>
  <div class="ln l1" style="left:1050px;width:320px"><b></b></div>
@@ -58,25 +60,22 @@ var P='#s11-setup-root', S=55.55;
 function T(g){return Math.max(0, +(g - S).toFixed(3));}
 var tl=gsap.timeline({paused:true});
 
-tl.fromTo(P+' .cal',{opacity:0,y:30,filter:'blur(8px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.35,ease:'power3.out'},T(55.6));
-tl.fromTo(P+' .day',{scale:0,opacity:0},{scale:1,opacity:1,duration:.25,stagger:.018,ease:'back.out(2)'},T(55.62));
-// Lisa rolling carousel: 12 weeks -> 4 weeks -> 1 day -> Today
-[56.0,56.35,56.7].forEach(function(t,i){
-  tl.to(P+' .reel',{y:-150*(i+1),filter:'blur(6px)',duration:.16,ease:'power2.in'},T(t)-.16);
-  tl.to(P+' .reel',{filter:'blur(0px)',duration:.22,ease:'back.out(1.6)'},T(t));
-});
-// calendar collapses with the carousel: 14 days -> 6 -> 1 -> Today
-tl.to([13,12,11,10,9,8,7,6].map(function(i){return P+' .day'+i;}),{scale:0,opacity:0,duration:.18,stagger:.015,ease:'power2.in'},T(55.88));
-tl.to([5,4,3,2,1].map(function(i){return P+' .day'+i;}),{scale:0,opacity:0,duration:.18,stagger:.02,ease:'power2.in'},T(56.22));
-tl.to(P+' .day0',{x:264,y:59,width:280,borderRadius:30,backgroundColor:'#16A34A',duration:.35,ease:'power3.inOut'},T(56.55));
-tl.to(P+' .day0 span',{opacity:0,duration:.15},T(56.55));
-tl.to(P+' .day0 b',{opacity:1,duration:.2},T(56.75));
-tl.fromTo(P+' .day0',{scale:1},{scale:1.12,duration:.15,yoyo:true,repeat:1,ease:'power2.out',immediateRender:false},T(56.9));
-tl.to([P+' .cal',P+' .grid'],{opacity:0,y:-50,duration:.2,ease:'power2.in'},T(57.22));
+tl.fromTo(P+' .mcal',{opacity:0,y:40,scale:.96},{opacity:1,y:0,scale:1,duration:.35,ease:'power3.out'},T(55.58));
+// slow red cross drawn over the booked implementation weeks
+tl.to(P+' .x1',{strokeDashoffset:0,duration:.38,ease:'power2.inOut'},T(55.92));
+tl.to(P+' .x2',{strokeDashoffset:0,duration:.38,ease:'power2.inOut'},T(56.3));
+tl.to(P+' .dc.im',{backgroundColor:'#EEF1F5',color:'#A3ABB7',duration:.3},T(56.62));
+tl.to(P+' .mh .chip',{opacity:.35,duration:.3},T(56.62));
+// today circled, "Implementation: Today" written in
+tl.to(P+' .ring',{strokeDashoffset:0,duration:.35,ease:'power2.out'},T(56.7));
+tl.to(P+' .d16',{backgroundColor:'#DCFCE7',color:'#15803D',duration:.25},T(56.7));
+tl.fromTo(P+' .wr .l1',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.3,ease:'power2.out'},T(56.6));
+tl.fromTo(P+' .wr .l2',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.35,ease:'power2.out'},T(56.85));
+tl.to([P+' .mcal',P+' .wr'],{opacity:0,y:-40,filter:'blur(8px)',duration:.16,ease:'power2.in'},T(57.36));
 tl.set(P+' .ln b',{scaleX:0},0);
-tl.fromTo(P+' .ln',{opacity:0},{opacity:1,duration:.3},T(57.5));
-tl.fromTo(P+' .st',{scale:0},{scale:1,duration:.4,stagger:.08,ease:'back.out(2)'},T(57.45));
-tl.fromTo(P+' .sl',{opacity:0,y:20},{opacity:.35,y:0,duration:.3,stagger:.08},T(57.55));
+tl.fromTo(P+' .ln',{opacity:0},{opacity:1,duration:.3},T(57.56));
+tl.fromTo(P+' .st',{scale:0},{scale:1,duration:.35,stagger:.06,ease:'back.out(2)'},T(57.52));
+tl.fromTo(P+' .sl',{opacity:0,y:20},{opacity:.35,y:0,duration:.3,stagger:.06},T(57.58));
 
 tl.to(P+' .s0',{borderColor:'#2B7BE0',duration:.25},T(57.75));
 tl.to(P+' .s0',{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'},T(57.75));

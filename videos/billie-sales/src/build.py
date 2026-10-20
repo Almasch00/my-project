@@ -591,7 +591,7 @@ tl.fromTo(P+' .sl',{opacity:0,y:20},{opacity:.35,y:0,duration:.3,stagger:.06},T(
 tl.to(P+' .s{i}',{{borderColor:'#2B7BE0',duration:.25}},T({t}));
 tl.to(P+' .s{i}',{{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'}},T({t}));
 tl.to(P+' .sl{i}',{{opacity:1,duration:.25}},T({t}));
-""" + (f"tl.to(P+' .l{i} b',{{scaleX:1,duration:.5,ease:'power2.inOut'}},T({steps[i + 1][2] - .5:.2f}));\n" if i < 1 else "")
+""" + (f"tl.to(P+' .l{i} b',{{scaleX:1,duration:.3,ease:'power2.inOut'}},T(60.18));\n" if i < 1 else "")
    for i, (c, lab, t) in enumerate(steps)) + """
 tl.to(P+' .s1',{boxShadow:'0 0 0 22px rgba(43,123,224,.18)',duration:.4},T(60.8));
 tl.to(P+' .steps',{opacity:0,y:-30,duration:.25,ease:'power2.in'},T(61.6));
@@ -655,7 +655,7 @@ CAPS = [
     ("Odoo runs on rules.", 50.73),
     ("Billie catches the exceptions the rules don't see.", 52.65),
     ("No implementation project.", 55.65),
-    ("Install the app, add your API key, and Billie gets to work.", 57.75),
+    ("Install the app, and Billie gets to work.", 57.75),
     ("Curious what your reorder rules are costing you?", 61.95),
     ("Book a 20-minute stock check.", 64.68),
 ]

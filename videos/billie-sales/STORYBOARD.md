@@ -90,4 +90,4 @@ style_reference: Lisa (v.1.1) sales video
 - duration: 7.15s
 - status: animated
 - voiceover: "Curious what your reorder rules are costing you? Book a 20-minute stock check."
-- motion: Lisa big gradient letters "Billie", then logo-assemble-lockup end card with CTA, info@bayforward.com, Bay Forward logo
+- motion: Lisa big gradient letters "Billie", then logo-assemble-lockup end card with CTA and info@bayforward.be (no Bay Forward logo)

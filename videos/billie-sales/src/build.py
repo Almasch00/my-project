@@ -622,7 +622,6 @@ scene("s12-cta", 61.85, TOTAL, """
  <div class="lock"><img src="assets/billie.png" alt="Billie"><div class="wm">Billie</div></div>
  <div class="cta">{''.join(f'<span class="{"hl" if w in ("20-minute",) else ""}">{w}</span>' for w, _ in cta_words)}</div>
  <div class="mail">info@bayforward.be</div>
- <div class="bf">by <img src="assets/bayforward.svg" alt="Bay Forward"></div>
 </div>
 """, "".join(f"tl.fromTo(P+' .L{i}',{{y:{(-900 if i % 2 else 900)},opacity:0}},{{y:0,opacity:1,duration:.55,ease:'power4.out'}},T({61.95 + i * .1:.2f}));\n" for i in range(6)) + """
 tl.to(P+' .L',{x:'-=40',duration:2.3,ease:'none'},T(62.2));
@@ -632,7 +631,6 @@ tl.fromTo(P+' .lock img',{scale:0,rotation:-15},{scale:1,rotation:0,duration:.6,
 tl.fromTo(P+' .wm',{x:-50,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},T(64.6));
 """ + "".join(f"tl.fromTo(P+' .cta span:nth-child({i+1})',{{y:40,opacity:0}},{{y:0,opacity:1,duration:.35,ease:'back.out(2)'}},T({t}));\n" for i, (w, t) in enumerate(cta_words)) + """
 tl.fromTo(P+' .mail',{opacity:0,y:14},{opacity:1,y:0,duration:.4},T(66.4));
-tl.fromTo(P+' .bf',{opacity:0,y:14},{opacity:1,y:0,duration:.4},T(66.7));
 tl.to(P+' .lock img',{y:-10,duration:.8,yoyo:true,repeat:1,ease:'sine.inOut'},T(66.9));
 """)
 

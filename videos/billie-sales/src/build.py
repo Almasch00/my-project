@@ -537,8 +537,8 @@ tl.to([P+' .top',P+' .tbl',P+' .bot',P+' .cnt'],{opacity:0,y:-30,duration:.25,ea
 """)
 
 # ------------------------------------------------------------------ S11 setup
-steps = [("1f9e9", "Install the app", 57.75), ("1f511", "Add your API key", 58.89), (None, "Billie gets to work", 60.48)]
-SX = [460, 960, 1460]
+steps = [("1f9e9", "Install the app", 57.75), (None, "Billie gets to work", 60.48)]
+SX = [660, 1260]
 scene("s11-setup", 55.55, 61.85, f"""
 #__RID__ .mcal{{position:absolute;left:230px;top:96px;width:820px;height:620px;background:#fff;border-radius:34px;box-shadow:0 30px 60px rgba(20,27,60,.13);padding:34px 42px;}}
 #__RID__ .mh{{display:flex;align-items:center;gap:16px;font-weight:700;font-size:40px;}}
@@ -568,7 +568,6 @@ scene("s11-setup", 55.55, 61.85, f"""
 <div class="wr"><div class="l1">Implementation:</div><div class="l2">Today ✓</div></div>
 <div class="steps">
  <div class="ln l0" style="left:{SX[0] + 90}px;width:{SX[1] - SX[0] - 180}px"><b></b></div>
- <div class="ln l1" style="left:{SX[1] + 90}px;width:{SX[2] - SX[1] - 180}px"><b></b></div>
  {''.join(f'<div class="st s{i}" style="left:{x - 90}px">{icon(c, 92) if c else "<img class=rb src=assets/billie.png alt=Billie>"}</div><div class="sl sl{i}" style="left:{x - 220}px"><small>STEP {i + 1}</small><b>{t}</b></div>' for i, ((c, t, _), x) in enumerate(zip(steps, SX)))}
 </div>
 """, """
@@ -592,9 +591,9 @@ tl.fromTo(P+' .sl',{opacity:0,y:20},{opacity:.35,y:0,duration:.3,stagger:.06},T(
 tl.to(P+' .s{i}',{{borderColor:'#2B7BE0',duration:.25}},T({t}));
 tl.to(P+' .s{i}',{{scale:1.12,duration:.18,yoyo:true,repeat:1,ease:'power2.out'}},T({t}));
 tl.to(P+' .sl{i}',{{opacity:1,duration:.25}},T({t}));
-""" + (f"tl.to(P+' .l{i} b',{{scaleX:1,duration:.5,ease:'power2.inOut'}},T({steps[i + 1][2] - .5:.2f}));\n" if i < 2 else "")
+""" + (f"tl.to(P+' .l{i} b',{{scaleX:1,duration:.5,ease:'power2.inOut'}},T({steps[i + 1][2] - .5:.2f}));\n" if i < 1 else "")
    for i, (c, lab, t) in enumerate(steps)) + """
-tl.to(P+' .s2',{boxShadow:'0 0 0 22px rgba(43,123,224,.18)',duration:.4},T(60.8));
+tl.to(P+' .s1',{boxShadow:'0 0 0 22px rgba(43,123,224,.18)',duration:.4},T(60.8));
 tl.to(P+' .steps',{opacity:0,y:-30,duration:.25,ease:'power2.in'},T(61.6));
 """)
 

@@ -83,7 +83,7 @@ style_reference: Lisa (v.1.1) sales video
 - duration: 6.3s
 - status: animated
 - voiceover: "No implementation project. Install the app, add your API key, and Billie gets to work."
-- motion: October month calendar with booked implementation weeks; red cross draws over them, today circled green, "Implementation: Today ✓" wipes in; 3-step horizontal timeline fills
+- motion: October month calendar with booked implementation weeks; red cross draws over them, today circled green, "Implementation: Today ✓" wipes in; 2-step horizontal timeline fills (Install the app → Billie gets to work)
 
 ## Frame 12 — CTA
 - src: compositions/s12-cta.html
